@@ -1,0 +1,21 @@
+package com.tj.ex03insert;
+
+import java.util.Scanner;
+
+public class InsertOracle {
+	public static void main(String[] args) {
+		String driver="oracle.jdbc.driver.OracleDriver";
+		String url="jdbc:oracle:thin:@127.0.0.1:1521:xe"; 
+		Scanner sc = new Scanner(System.in);
+		System.out.println("입력할 부서번호?");
+		int deptno = sc.nextInt();
+		System.out.println("입력할 부서이름?");
+		sc.hasNextLine(); // 버퍼 지우는 용도
+		String dname = sc.nextLine(); // 부서이름에 스페이스 사용가능
+		System.out.println("입력할 부서위치?");
+		sc.hasNextLine(); // 버퍼 지우는 용도
+		String loc = sc.nextLine();
+		
+		
+	}
+}

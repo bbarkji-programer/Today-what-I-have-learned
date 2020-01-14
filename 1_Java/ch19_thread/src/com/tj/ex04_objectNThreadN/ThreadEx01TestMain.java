@@ -1,0 +1,14 @@
+package com.tj.ex04_objectNThreadN;
+// ThreadEx01 implements Runnable
+public class ThreadEx01TestMain {
+	public static void main(String[] args) {
+		Runnable target01 = new ThreadEx01(); 
+		Runnable target02 = new ThreadEx01(); // target이 2개
+		Thread threadA = new Thread(target01,"A");
+		Thread threadB = new Thread(target02,"B");
+		threadA.start();
+		threadB.start();
+		System.out.println("main함수");
+	}
+
+}

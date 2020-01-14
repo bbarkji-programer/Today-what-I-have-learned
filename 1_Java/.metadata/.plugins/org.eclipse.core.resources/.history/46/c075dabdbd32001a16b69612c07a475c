@@ -1,0 +1,21 @@
+package ch00_practice;
+
+import java.awt.Container;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class StudentFrame extends JFrame {
+
+	private Container contenPane;
+	private JPanel jpup, jpbtn;
+	private JTextField txtSNo, txtSName, txtScore;
+	private JTextArea txtPool;
+	private JButton btnSNoSearch, btnSNameSearch, btnMNameSearch;
+	private JButton btnInput, btnUpdate, btnStudentOut, btnExpel, btnExit, btnExpelOut;
+	
+	
+}

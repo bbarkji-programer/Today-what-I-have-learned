@@ -1,0 +1,22 @@
+package com.tj.ex06preparedstmt;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+
+public class PreparedStatementUpdateSelect {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		// 사용자에게 부서 번호를 입력받아 부서 번호가 존재하면 수정작업(부서 이름, 부서 위치를 입력 받아서 수정)
+		// 						  부서 번호가 존재하지 않으면 없다고 출력
+		String selectSQL = "SELECT COUNT(*) CNT FROM DEPT WHERE DEPTNO=?";
+		String updateSQL = "UPDATE DEPT SET DNAME=?, LOC=? WHERE DEPTNO=?";
+		
+		Connection cnn = null;
+		PreparedStatement pstmt = null;
+		
+		
+		
+	}
+}

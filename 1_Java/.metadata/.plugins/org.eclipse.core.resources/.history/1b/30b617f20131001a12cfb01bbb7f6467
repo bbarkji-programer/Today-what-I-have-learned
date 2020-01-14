@@ -1,0 +1,7 @@
+package com.tj.ex00conn;
+
+public class ConnOracle {
+	public static void main(String[] args) {
+		String driver="oracle.jdbc.driver.OracleDriver";
+	}
+}

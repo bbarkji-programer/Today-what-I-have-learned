@@ -1,0 +1,97 @@
+package com.tj.student;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Student {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe"; 
+		Scanner sc = new Scanner(System.in);
+		String fn = "";
+		ArrayList<StudentDTO> students = new ArrayList<StudentDTO>(); // 데이터베이스에 있는 걸 arraylist에 넣어서 출력.
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sName,mName;
+		int score;
+		
+		try {
+			Class.forName(driver);
+		} catch (ClassNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+		do {
+			System.out.print("1:학생입력(이름,학과명,점수), 2:학과 별 출력(학과명), 3:다 출력, 그 외:종료");			
+			fn = sc.next();
+			switch(fn) {
+			case "1" : //학생입력(이름,학과명,점수)
+				String sql="INSERT INTO STUDENT (sNO,sNAME,mNO,SCORE) VALUES" + 
+						"    (TO_CHAR(SYSDATE,'YYYY')" +
+						"    ||(SELECT mNO FROM MAJOR WHERE mNAME=?)" +
+						"	 ||TRIM(TO_CHAR(STUDENT_SQ.NEXTVAL,'000'))," + 
+						"    ?,(SELECT mNO FROM MAJOR WHERE mNAME=?),?)";
+				System.out.print("입력할 학생 이름?");
+				sName = sc.next();
+				System.out.print("학과명?");
+				mName = sc.next();
+				System.out.print("점수?");
+				score = sc.nextInt();
+				try {
+					conn = DriverManager.getConnection(url,"scott","tiger");	
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, mName);
+					pstmt.setString(2, sName);
+					pstmt.setString(3, mName);
+					pstmt.setInt(4, score);
+					int result = pstmt.executeUpdate();
+					System.out.println(result>0 ? sName+"입력성공":"입력실패");					
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				} finally {
+					try {
+						if(pstmt!=null) pstmt.close();
+						if(conn!=null) conn.close();						
+					} catch (Exception e2) {}					
+				}
+				break;
+			case "2" : //학과별 출력(학과명 입력받아 학생 출력)
+				sql="SELECT ROWNUM RANK, sNAME||'('||sNO||')' NAME_NO, mNAME, SCORE" + 
+						"    FROM (SELECT*FROM STUDENT S, MAJOR M WHERE S.mNO=M.mNO AND mNAME=?" + 
+						"    ORDER BY SCORE DESC)"; // 위에서 변수 선언 했으니까 따로 선언할 필요없이 그냥 씀
+				System.out.print("출력할 학과 이름?");
+				mName = sc.next(); //위에서 변수 선언 했으니까 따로 선언할 필요 없이 그냥 씀
+				try {
+					conn = DriverManager.getConnection(url,"scott","tiger");
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1,mName);
+					rs = pstmt.executeQuery(sql);
+					int rank = rs.getInt("rank");
+					String nameNo = rs.getString("nameNo");
+					String mName2 = rs.getString("mName");
+					int score1 = rs.getInt("score");				
+					StudentDTO sdto = new StudentDTO(rank,nameNo,mName2,score1);
+					System.out.println(sdto.toString());
+					
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+
+				}
+			//	String sql=""
+				break;
+			case "3" : //다 출력(제적 당하지 않은 학생 다)
+			//	String sql=""
+				break;
+			}
+		}while(fn.equals("1")||fn.equals("2")||fn.equals("3"));
+		System.out.println("안녕~");
+
+	}
+}

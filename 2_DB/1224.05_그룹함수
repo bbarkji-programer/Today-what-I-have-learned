@@ -1,0 +1,147 @@
+-- V. 그룹함수 : SUM, AVG, MIN, MAX, COUNT, STDDEV, VARIANCE
+SELECT SUM(SAL) FROM EMP;
+SELECT DEPTNO, SUM(SAL) FROM EMP GROUP BY DEPTNO; -- DEPTNO 별로 SAL을 SUM한 결과
+SELECT DEPTNO, SUM(SAL) 
+    FROM EMP
+    GROUP BY DEPTNO
+    HAVING SUM(SAL)>9000;
+SELECT DEPTNO, SUM(SAL)
+    FROM EMP
+    WHERE ENAME<>'SMITH'
+    GROUP BY DEPTNO
+    HAVING SUM(SAL)>9000
+    ORDER BY SUM(SAL) DESC; -- 생략은 가능하지만 순서는 지켜줘야
+-- EMP 테이블의 평균 SAL
+SELECT ROUND(AVG(SAL),2) FROM EMP;
+SELECT COUNT(*) FROM EMP; -- EMP 테이블의 ROW 수
+SELECT SUM(SAL)/COUNT(*), AVG(SAL) FROM EMP;
+SELECT SUM(COMM) FROM EMP; -- 그룹함수는 NULL 값은 제외하고 계산
+SELECT SUM(COMM)/COUNT(COMM), AVG(COMM) FROM EMP;
+SELECT COUNT(COMM) FROM EMP;
+-- VARIANCE : 분산, STDDEV : 표준편차
+SELECT VARIANCE(SAL) 분산, STDDEV(SAL)*STDDEV(SAL) 표준편차 FROM EMP;
+SELECT DEPTNO, AVG(SAL), STDDEV(SAL) FROM EMP GROUP BY DEPTNO
+    ORDER BY AVG(SAL);
+-- MIN, MAX
+SELECT DEPTNO, MAX(SAL) FROM EMP GROUP BY DEPTNO;
+SELECT JOB, MIN(SAL) FROM EMP GROUP BY JOB;
+-- COUNT
+SELECT DISTINCT JOB FROM EMP;
+SELECT COUNT(DISTINCT(JOB))FROM EMP; -- 중복을 제거한 행 수
+
+-- <탄탄다지기>
+-- 가장 최근에 입사한 직원의 입사일과 가장 최초에 입사한 직원의 입사일 출력
+SELECT MAX(HIREDATE) 최근입사일 , MIN(HIREDATE) 최초입사일 FROM EMP; -- MAX, MIN 은 모든 타입이 다 가능
+-- 최근에 입사한 직원의 입사일, 근무일수, 입사한지 가장 오래된 직원의 입사일, 근무일수
+SELECT MAX(HIREDATE) 최근입사일 , TRUNC(SYSDATE-MAX(HIREDATE))||'일째' 근무일수, 
+    MIN(HIREDATE) 최초입사일, TRUNC(SYSDATE-MIN(HIREDATE))||'일째' 근무일수 
+    FROM EMP;
+-- 10번 부서 소속의 사원의 평균 급여는?
+SELECT ROUND(AVG(SAL)) FROM EMP WHERE DEPTNO=10; 
+-- 10번 부서 소속의 상여금을 받는 사원의 수는?
+SELECT COUNT(COMM) FROM EMP WHERE DEPTNO=10; -- DEPTNO=10 만
+SELECT DEPTNO, AVG(SAL) FROM EMP 
+    GROUP BY DEPTNO
+    HAVING AVG(SAL)>=2000; -- AVG 셀이 2000이상 (그룹 함수에 대한 조건. HAVING 절에)
+-- 부서명 별 평균 급여를 출력(부서명 ABCD 순으로 출력)
+SELECT DNAME, AVG(SAL) 
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO=D.DEPTNO
+    GROUP BY DNAME
+    ORDER BY DNAME;
+-- 부서번호 별 사원수와 커미션을 받는 사원 수를 계산
+SELECT DEPTNO, COUNT(*) 사원수, COUNT(COMM) "커미션 받는 사원 수" FROM EMP 
+    GROUP BY DEPTNO;
+-- 부서 이름 별 사원 수와 상여금 받는 사원 수
+SELECT DNAME 부서, COUNT(*), COUNT(COMM)
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO=D.DEPTNO
+    GROUP BY DNAME -- ALIAS 안된다.
+    ORDER BY 부서; -- ALIAS 가능
+
+-- 셤 연습문제
+-- 1. 사원 테이블에서 인원수,최대 급여,최소 급여,급여의 합을 계산하여 출력하는 SELECT 문장을 작성하여라.
+SELECT COUNT(*) 인원수, MAX(SAL) 최대급여, MIN(SAL) 최소급여, SUM(SAL) 급여합 FROM EMP;
+-- 2. 사원테이블에서 업무별 인원수를 구하여 출력하는 SELECT 문장을 작성하여라.
+SELECT JOB, COUNT(*) FROM EMP GROUP BY JOB;
+--- 3. 사원테이블에서 최고 급여와 최소 급여의 차이는 얼마인가 출력하는 SELECT문장을 작성하여라.
+SELECT MAX(SAL)-MIN(SAL) FROM EMP;
+-- 4. 각 부서별로 인원수, 급여 평균, 최저 급여, 최고 급여, 급여의 합을 출력하되 급여의 합이 많은 순으로 출력하라.
+SELECT DNAME, COUNT(*), AVG(SAL), MIN(SAL), MAX(SAL), SUM(SAL)
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO=D.DEPTNO
+    GROUP BY DNAME
+    ORDER BY SUM(SAL) DESC;
+-- 5. 부서별, 업무별 그룹하여 결과를 부서번호, 업무, 인원수, 급여의 평균, 급여의 합을 구하여 출력하라(출력결과는 부서번호, 업무순으로 오름차순 정렬)
+SELECT DEPTNO,JOB, COUNT(*), AVG(SAL), SUM(SAL)
+    FROM EMP
+    GROUP BY DEPTNO, JOB
+    ORDER BY DEPTNO, JOB;
+-- 6. 업무별, 부서별 그룹하여 결과를 부서번호, 업무, 인원수, 급여의 평균, 급여의 합을 구하여 출력하라.(출력결과는 업무순, 부서번호 순 오름차순 정렬)
+SELECT JOB, E.DEPTNO, COUNT(*), AVG(E.SAL), SUM(E.SAL)
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO=D.DEPTNO
+    GROUP BY E.DEPTNO,JOB
+    ORDER BY JOB, DEPTNO;
+    
+-- GROUP BY 필드1, 필드2
+SELECT DEPTNO, AVG(SAL) FROM EMP GROUP BY DEPTNO;
+SELECT DEPTNO, JOB, AVG(SAL) FROM EMP GROUP BY DEPTNO, JOB ORDER BY DEPTNO;
+SELECT DEPTNO, JOB, SUM(SAL) FROM EMP GROUP BY DEPTNO, JOB;
+
+-- GROUP BY 절에 필드가 2개 일 때 가독성을 높이기 위해 DECODE 
+    -- 1단계
+    SELECT DEPTNO, DECODE(JOB, 'CLERK', SAL, 0) CLERK,
+                   DECODE(JOB, 'MANAGER', SAL, 0) MANAGER,
+                   DECODE(JOB, 'PRESIDENT', SAL, 0) PRESIDENT,
+                   DECODE(JOB, 'ANALYST', SAL, 0) ANALYST,
+                   DECODE(JOB, 'SALESMAN', SAL, 0) SALESMAN FROM EMP; 
+    -- 2단계          
+    SELECT DEPTNO, SUM(DECODE(JOB, 'CLERK', SAL, 0)) CLERK,
+                   SUM(DECODE(JOB, 'MANAGER', SAL, 0)) MANAGER,
+                   SUM(DECODE(JOB, 'PRESIDENT', SAL, 0)) PRESIDENT,
+                   SUM(DECODE(JOB, 'ANALYST', SAL, 0)) ANALYST,
+                   SUM(DECODE(JOB, 'SALESMAN', SAL, 0)) SALESMAN 
+                   FROM EMP
+                   GROUP BY DEPTNO;
+    -- ROLLUP 은 TOTAL
+    SELECT DEPTNO, SUM(SAL) FROM EMP GROUP BY ROLLUP(DEPTNO); 
+    SELECT DEPTNO, AVG(SAL) FROM EMP GROUP BY ROLLUP(DEPTNO); 
+    -- 3단계
+    SELECT NVL(TO_CHAR(DEPTNO,'99'),'TOTAL') 구분,
+                   SUM(DECODE(JOB, 'CLERK', SAL, 0)) CLERK,
+                   SUM(DECODE(JOB, 'MANAGER', SAL, 0)) MANAGER,
+                   SUM(DECODE(JOB, 'PRESIDENT', SAL, 0)) PRESIDENT,
+                   SUM(DECODE(JOB, 'ANALYST', SAL, 0)) ANALYST,
+                   SUM(DECODE(JOB, 'SALESMAN', SAL, 0)) SALESMAN, 
+                   SUM(SAL) "부서별 소계"
+                   FROM EMP
+                   GROUP BY ROLLUP(NVL(TO_CHAR(DEPTNO,'99'),'TOTAL'));
+-- 좌측(JOB) 우측(DEPTNO) AVG(SAL) 소계포함
+SELECT JOB, DEPTNO, AVG(SAL) FROM EMP GROUP BY JOB, DEPTNO;
+SELECT JOB, DEPTNO, AVG(SAL) FROM EMP GROUP BY ROLLUP(JOB, DEPTNO);
+SELECT JOB, ROUND(AVG(DECODE(DEPTNO, '10', SAL))) "10 부서",
+            ROUND(AVG(DECODE(DEPTNO, '20', SAL))) "20 부서",
+            ROUND(AVG(DECODE(DEPTNO, '30', SAL))) "30 부서",
+            ROUND(AVG(SAL)) "소   계"
+            FROM EMP
+            GROUP BY ROLLUP(JOB);
+
+-- DEPTNO 별 평균 급여 출력. 평균 급여가 2000 이상인 그룹만 출력
+SELECT DEPTNO, AVG(SAL) 
+    FROM EMP
+    GROUP BY DEPTNO
+    HAVING AVG(SAL)>=2000;
+
+-- 부서 번호 별 최대 급여 출력
+SELECT DEPTNO, MAX(SAL) FROM EMP GROUP BY DEPTNO;
+
+-- 부서 번호 별 최대급여, 그 최대 급여 받는 사원 이름 => 서브쿼리
+
+
+
+
+
+
+
+

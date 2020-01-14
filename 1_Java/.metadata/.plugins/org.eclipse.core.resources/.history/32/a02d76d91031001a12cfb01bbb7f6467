@@ -1,0 +1,27 @@
+package com.tj.ex01selectAll;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class SelectAllOracle {
+	public static void main(String[] args) {
+		String driver="oracle.jdbc.driver.OracleDriver";
+		String url="jdbc:oracle:thin:@127.0.0.1:1521:xe"; 
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		try {
+			Class.forName(driver); // 1단계.driver load
+			conn = DriverManager.getConnection(url,"scott","tiger"); // 2단계. DB연결
+			
+		} catch (ClassNotFoundException e) {
+			System.out.println(e.getMessage());
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

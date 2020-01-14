@@ -1,0 +1,36 @@
+package com.tj.ex05delete;
+
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class DeleteOracle {
+	public static void main(String[] args) {
+		String driver="oracle.jdbc.driver.OracleDriver";
+		String url="jdbc:oracle:thin:@localhost:1521:xe"; 
+		Scanner sc = new Scanner(System.in);
+		System.out.println("삭제할 부서번호는?");
+		int deptno = sc.nextInt();
+		String deletSQL = String.format("DELETE FROM DEPT WHERE DEPTNO=%d",deptno);
+		
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url,"scott","tiger");
+			stmt = conn.createStatement();
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,29 @@
+package com.tj.supermarket;
+
+public class CustomerDTO {
+	private String ctel;
+	private String cname;
+	private int cpoint;
+	private int ccost;
+	private String levelName;
+	private int smmm;
+	
+	public CustomerDTO(String ctel, String cname, int cpoint, int ccost, String levelName, int smmm) {
+		super();
+		this.ctel = ctel;
+		this.cname = cname;
+		this.cpoint = cpoint;
+		this.ccost = ccost;
+		this.levelName = levelName;
+		this.smmm = smmm;
+	}
+
+	@Override
+	public String toString() {
+		return ctel + "\t" + cname + "\t" + cpoint + "\t" + ccost + "\t"
+				+ levelName + "\t" + smmm;
+	}
+	
+	
+
+}

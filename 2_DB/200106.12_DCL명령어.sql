@@ -1,0 +1,23 @@
+-- DCL : CREATE USER~, ALTER USER~, GRANT, REVOKE, DROP USER~
+    -- DCL 명령어는 DBA 권한이 있는 계정만 가능(일반유저X)
+CREATE USER PARK IDENTIFIED BY JIYEONG; -- 사용자 생성(권한 부여는 아직 안해서 로그인은 안된다.)
+ALTER USER PARK IDENTIFIED BY tiger; -- 비밀번호 변경(비밀번호는 대소문자를 구분한다.)
+SELECT*FROM EMPV1;
+GRANT CREATE SESSION TO PARK; -- 로그인 권한(SESSION) 부여
+-- 여러번 GRANT(권한부여) 하지 않고 '권한객체'를 만들어서 한 번에 권한을 주는 방법
+CREATE ROLE ROLLEX1; -- ROLLEX1권한 객체 생성
+-- ROLLEX1=로그인,테이블생성,뷰 생성 권한이 부여된 '권한객체'
+GRANT CREATE SESSION, CREATE TABLE, CREATE VIEW TO ROLLEX1;
+GRANT ROLLEX1 TO PARK; -- PARK에 ROLLEX1권한(로그인,테이블생성,뷰) 권한 부여
+GRANT SELECT ON EMPV1 TO PARK; -- PARK에 SCOTT이 갖고 있는 EMPV1 테이블을 SELECT 할 수 있는 권한 부여
+GRANT ALL ON EMPV1 TO PARK; -- PARK에게 EMPV1 뷰 테이블 모든 권한 부여
+
+SELECT*FROM EMPV1;
+SELECT*FROM EMP;
+SHOW USER;
+GRANT ALL ON SALGRADE TO PARK;
+REVOKE ALL ON SALGRADE FROM PARK; -- 권한 뺏음
+GRANT SELECT ON SALGRADE TO PARK; -- SELECT 권한만 줌
+
+-- 계정 없애려면 없애려는 계정이 접속 해지 상태여야 함.
+DROP USER PARK CASCADE; -- 사용자 삭제

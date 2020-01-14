@@ -1,0 +1,12 @@
+package com.tj.student;
+
+import java.util.Scanner;
+
+public class Student {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe"; 
+		Scanner sc = new Scanner(System.in);
+		System.out.println("원하는 기능번호를 숫자만 입력하세요.(1:학생입력,2.");
+	}
+}

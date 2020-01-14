@@ -1,0 +1,19 @@
+package com.tj.ex02selectWhere;
+
+import java.util.Scanner;
+
+public class SelectWhereDname2 {
+	public static void main(String[] args) {
+		// 1. 사용자로부터 부서이름 받아,
+		// 2-1. 해당 부서 이름이 있을 경우, 부서정보출력, 해당 부서 사원 (사번,이름,부서위치)
+		// 2-2. 해당 부서 이름이 없을 경우 없다고 출력
+		String driver="oracle.jdbc.driver.OracleDriver";
+		String url="jdbc:oracle:thin:@127.0.0.1:1521:xe"; 
+		Scanner sc = new Scanner(System.in);
+		System.out.println("검색을 원하는 부서명은?");
+		String dname = sc.nextLine();
+		String sql = "SELECT*FROM DEPT WHERE DNAME='"+dname+"'";
+		
+		
+	}
+}

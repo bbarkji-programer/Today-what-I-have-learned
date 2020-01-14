@@ -1,0 +1,10 @@
+package com.tj.student;
+//SNO, SNAME, MNAME, SCORE
+public class StudentDTO2 {
+	private String sNo;
+	private String sName;
+	private String mName;
+	private int score;
+	
+	
+}
