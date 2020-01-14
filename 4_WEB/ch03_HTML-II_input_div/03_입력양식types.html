@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form action="#"
+          method="get">
+        <!--★ 256글자 넘어갈 경우 post 써야함-->
+        아이디:
+        <input type="text" name="uid" value="ID" />
+        <input type="button" value="중복확인" /><br />
+        비밀번호:
+        <input type="password" name="upw" /><br />
+        전화번호: <!-- ★type="tel" 스마트폰에서 숫자 키패드로 바뀐다.-->
+        <input type="tel" name="utel01" size="3" /> -
+        <input type="tel" name="utel02" size="3" /> -
+        <input type="tel" name="utel03" size="3" /><br />
+        사 진:
+        <input type="file" name="ufilename" /><br />
+        성 별:
+        <input type="radio" name="gender" value="남" /> 남
+        <input type="radio" name="gender" value="여" checked="checked" /> 여<br /> <!-- ★ radio는 같은 name을 써야 한 개만 선택-->
+        사용언어:
+        <input type="checkbox" name="lang" value="kor" checked="checked" /> 한국어 <!-- checkbox는 중복허용 -->
+        <input type="checkbox" name="lang" value="chi" /> 중국어
+        <input type="checkbox" name="lang" value="eng" /> 영어 <br />
+        생일:
+        <input type="date" name="birth" /><br /> <!-- 단, date 타입은 chrome에서만 됨.-->
+        자기소개:<br />
+        <textarea cols="40" rows="5" name="intro">자기소개를 해주세요.</textarea><br />
+        국적:
+        <select name="nation">
+            <option>대한민국</option>
+            <option>영국</option>
+            <option>중국</option>
+            <option>미국</option>
+        </select><br />
+        좋아하는 음식:
+        <select name="food" multiple="multiple" size="1">
+            <option>김치찌개</option>
+            <option>된장찌개</option>
+            <option>불고기</option>
+            <option>샐러드</option>
+        </select><br />
+        좋아하는 색상:
+        <input type="color" name="color" /><br />
+        좋아하는 정도: 0
+        <input type="range" name="step" min="0" max="10" />10<br />
+        홈페이지:
+        <input type="url" name="homepy" /><br />
+        이메일:
+        <input type="email" name="mail" /><br />
+        <input type="submit" value="입력" />
+
+    </form>
+</body>
+</html>

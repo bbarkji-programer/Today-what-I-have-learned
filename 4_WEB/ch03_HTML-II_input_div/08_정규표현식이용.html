@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form action="#" method="get">
+        전화 <input type="tel" name="tel" 
+                    pattern="\d{2,3}-[0-9]{3,4}-[0-9]{4}"
+                    placeholder="000-0000-0000"
+                    autofocus="autofocus"
+                    title="전화번호의 형식이 아닙니다."/><br />
+        카드 <input type="text" name="cardno"
+                    pattern="\d{4}-\d{4}-\d{4}-\d{4}"
+                    placeholder="0000-0000-0000-0000"
+                    title="카드번호의 형식이 아닙니다." /><br />
+        나이 <input type="number" name="age" min="1" max="120" /><br />
+        업무1 <input type="text" name="job1" /><br />
+        업무2 <select name="job2">
+                <option value="분석">분석</option>
+                <option value="설계">설계</option>
+                <option>구현</option>
+                <option>테스트</option>
+                <option>유지보수</option>
+              </select><br />
+        업무3 <input type="text" list="jobdata" name="job3" />
+            <datalist id="jobdata">
+                <option value="분석"></option>
+                <option value="설계"></option>
+                <option>구현</option>
+                <option>테스트</option>
+                <option>유지보수</option>
+            </datalist><br />
+    <input type="submit" />
+</form>
+</body>
+</html>
