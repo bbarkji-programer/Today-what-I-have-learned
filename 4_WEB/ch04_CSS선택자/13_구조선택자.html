@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+            width:200px;
+            margin:0 auto;
+        }
+        #wrap ul li{
+            list-style:none;
+            border:1px solid grey;
+            background-color:lightgrey;
+            padding:10px;
+            text-align:center;
+            font-size:20px;
+            font-weight:bold;
+            margin:2px;
+        }
+        #wrap ul li a{
+            text-decoration:none; /*밑줄 없애기*/
+            color:black;
+        }
+        #wrap ul li:nth-child(2n+1){ /*홀수번째*/
+            background-color:orange;
+        }
+        #wrap ul li:nth-child(2n){ /*짝수번째*/
+            background-color:yellow;
+        }
+        #wrap ul li:first-child{ /*첫 번째*/
+            border-radius:10px 10px 0 0; /*좌상 우상 우하 좌하*/
+        }
+        #wrap ul li:last-child{ /*마지막*/
+            border-radius:0 0 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <ul>
+            <li><a href="#menu1">menu1</a></li>
+            <li><a href="#menu2">menu2</a></li>
+            <li><a href="#menu3">menu3</a></li>
+            <li><a href="#menu4">menu4</a></li>
+            <li><a href="#menu5">menu5</a></li>
+            <li><a href="#menu6">menu6</a></li>
+            <li><a href="#menu7">menu7</a></li>
+        </ul>
+    </div>
+</body>
+</html>
