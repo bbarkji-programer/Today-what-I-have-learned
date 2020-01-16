@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            border:1px solid black;
+            font-size:large;
+            font-weight:bold;
+            text-align:center;
+        }
+        div:nth-child(1){
+            background-color:lightseagreen;
+        }
+        div:nth-child(2){
+            background-color:lightgreen;
+        }
+        div:nth-child(3){
+            background-color:lawngreen;
+            display:inline; /*라인형 태그로변경 -> height 적용이 안됨. 위 아래 margin 안먹음*/
+            margin:50px;
+        }
+        div:nth-child(4){
+            background-color:greenyellow;
+            display:inline;
+        }
+        div:nth-child(5){
+            background-color:black;
+            display:none; /*안보이게 - 공간도 안보이게. pc버전->스마트폰버전 or 클릭하면 생겼다 사라지게 할 때 등 사용*/
+        }
+        div:nth-child(6){
+            background-color:green;
+            display:inline-block; /*inline이긴 해서 한 줄에 들어가되 block이라 height는 적용됨*/
+        }
+        div:nth-child(7){
+            background-color:forestgreen;
+            display:inline-block;
+        }
+        div:nth-child(8){
+            background-color:darkseagreen;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        content1
+    </div>
+    <div>
+        content2
+    </div>
+    <div>
+        content3
+    </div>
+    <div>
+        content4
+    </div>
+    <div>
+        content5
+    </div>
+    <div>
+        content6
+    </div>
+    <div>
+        content7
+    </div>
+    <div>
+        content8
+    </div>
+</body>
+</html>

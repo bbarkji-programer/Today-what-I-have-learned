@@ -6,40 +6,51 @@
     <title></title>
     <style>
         #wrap{
-            width:800px;
+            width:700px;
             margin:0 auto;
-            overflow:hidden;
         }
-        #header{
+        #wrap #header{
             border-bottom:1px solid #cccccc;
+            text-align:center;
         }
-        p:first-child{
+        #wrap #content p:first-child{
             border-bottom:1px solid #cccccc;
-
+            padding:0 0 20px 0;
         }
-        p:nth-child(2)::first-line, p:nth-child(3)::first-line {
+        #wrap #content p:nth-child(2)::first-line, p:nth-child(3)::first-line {
             color: blue;
             font-weight: bold;
         }
-        p:nth-child(2)::first-letter, p:nth-child(3)::first-letter {
+        #wrap #content p:nth-child(2)::first-letter{
             color: blue;
             font-weight: bold;
-            font-size:30px;
+            font-size:2em;
         }
-        p:last-child::selection{
+        #wrap #content p span{
+            font-size:2em;
+        }
+        #wrap #content p span::selection{
             background-color:violet;
             color:yellow;
         }
-        ul li {
+        #wrap #content p:last-child::selection {
+            background-color: violet;
+            color: yellow;
+        }
+        #wrap #footer ul{
+            overflow:hidden;
+        }
+        #wrap #footer ul li {
             list-style: none;
             float: left;
+            padding: 0 10px 0 0;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
         <div id="header">
-            <h1>홍길동 조선의 도적</h1>
+            <h1>홍길동, 조선의 도적</h1>
         </div>
         <div id="content">
             <p>
@@ -53,7 +64,7 @@
                 기본성원이 되어 양반지주나 관청을 습격했는데, 지배층들은 이들을 「도적」이라 했다. 
             </p>
             <p>
-                15세기 말에서 16세기 초 연산군 통치기간에는 전국 곳곳에서 이러한 농민무장대가 일어났고, 
+                <span>1</span>5세기 말에서 16세기 초 연산군 통치기간에는 전국 곳곳에서 이러한 농민무장대가 일어났고, 
                 그 가운데 대표적인 것이 홍길동이 이끄는 무장대였다. 홍길동은 양반관리의 복장을 하고 스스로 
                 「첨지」라 하면서 무장한 많은 농민을 지휘해 여러 고을의 관청들을 습격했다. 
                 결국 체포되어 의금부에서 취조당한 기록이 남아 있다. 뒤에 그에 대한 이야기는 <홍길동전>으로

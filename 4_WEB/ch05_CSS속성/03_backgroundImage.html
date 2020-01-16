@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            width:70%; /*browser의 90%를 쓰겠다.*/
+            height:400px;
+            margin:0 auto;
+            border:1px solid red;
+            background-image:url('smallcat.jpg');
+        }
+        div:nth-child(1){
+            background-position:left top; /*defult*/
+        }
+        div:nth-child(2){
+            background-position:center center; /*defult*/ /*이게 실행이 안된다. 왜냐면, 현재 두 번째 div가 없어서.*/
+        }
+        div:nth-child(3){
+            background-position:center center; /*이건 실행이 된다. 왜냐면 세 번째 div는 있으니까*/
+        }
+        div:nth-child(5){
+            background-position:50% 50%; /* x축 50%, y축 50% 즉, center*/
+        }
+        div:nth-child(7){
+            background-position:100% 100%; /* x축 100%, y축 100%*/
+        }
+        div:nth-child(9){
+            background-position:right bottom;
+        }
+        div:nth-child(11){
+            background-repeat:repeat-x;
+            background-attachment:fixed; /*브라우저 left top과 사진의 left top을 맞춘다.*/
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>고양이</h1>
+    </div>
+    <br />
+    <div>
+        <h1>사진</h1>
+    </div>
+    <br />
+    <div>
+        <h1>고양이</h1>
+    </div>
+    <br />
+    <div>
+        <h1>사진</h1>
+    </div>
+    <br />
+    <div>
+        <h1>고양이</h1>
+    </div>
+    <br />
+    <div>
+        <h1>사진</h1>
+    </div>
+    <br />
+</body>
+</html>

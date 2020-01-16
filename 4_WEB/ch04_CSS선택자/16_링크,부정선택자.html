@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+            width:700px;
+            margin:0 auto;
+        }
+        #wrap #header{
+            font-size:30px;
+            font-weight:bold;
+            text-align:center;
+            text-decoration:underline;
+            border-bottom:1px solid #cccccc;
+            padding:20px 0 30px 0;
+        }
+        #wrap #content a{
+            text-decoration:none;
+            color:black;
+        }
+        #wrap #content a::after{ /*링크선택자*/
+            content:' - ' attr(href); 
+        }
+        #wrap #content{
+            border-bottom:1px solid #cccccc;
+        }
+        #wrap #content ul li:not(.fa){ /*부정선택자: .fa 외에 모든 li에 {}를 적용*/
+            background-color:lightpink;
+        }
+        #wrap #footer ul{
+            overflow:hidden;
+        }
+        #wrap #footer ul li {
+            list-style: none;
+            float: left;
+            padding: 0 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            Weekly connected Websites
+        </div>
+        <div id="content">
+            <ul>
+                <li class="fa"> <!--부정선택자-->
+                    <a href="http://www.naver.com" target="_blank">네이버</a>
+                </li>
+                <li>
+                    <a href="http://www.google.com" target="_blank">구글</a>
+                </li>
+                <li class="fa">
+                    <a href="http://www.instagram.com" target="_blank">인스타그램</a>
+                </li>
+                <li>
+                    <a href="http://www.daum.net" target="_blank">다음</a>
+                </li>
+            </ul>
+        </div>
+        <div id="footer">
+            <ul>
+                <li> <img src="http://www.moel.go.kr/images/layout/logo.png" alt="고용노동부로고" /></li>
+                <li> <img src="tjadress.JPG" alt="더존컴퓨터주소" /></li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>

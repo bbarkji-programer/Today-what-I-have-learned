@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #visibility div{
+            width:100px;
+            height:100px;
+            border:3px solid red;
+        }
+        #display div{
+            width:100px;
+            height:100px;
+            border:3px solid red;
+        }
+        #visibility div:nth-child(2){
+            visibility:hidden; /*안보이게(but 공간은 확보)*/
+        }
+        #display div:nth-child(2){
+            display:none; /*안보이게(공간도 확보X)*/
+        }
+    </style>
+</head>
+<body>
+        <div id="visibility">
+            <div>content1</div>
+            <div>content2</div>
+            <div>content3</div>
+        </div>
+        <div id="display">
+            <div>content1</div>
+            <div>content2</div>
+            <div>content3</div>
+        </div>
+</body>
+</html>

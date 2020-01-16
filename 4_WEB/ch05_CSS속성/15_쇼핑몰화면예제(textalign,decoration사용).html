@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<!--작성중-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+            margin:10px auto;
+            width:600px;
+            height:280px;
+            border: 1px solid #cfe6e3;
+        }
+        p:nth-child(1){
+            font-size:20px;
+            line-height:50px;
+            text-align:center;
+            text-decoration-line:underline;
+        }
+        p:nth-child(2){
+            font-size:16px;
+            font-weight:bold;
+            line-height:30px;
+            margin:5px;
+        }
+        p:nth-child(3){
+            font-size:12px;
+            line-height:20px;
+            margin:10px;
+        }
+        p:nth-child(4){
+            font-size:14px;
+            text-align:right;
+            margin:5px;
+            border-bottom:1px solid grey;
+            line-height:40px;
+        }
+        p:last-child{
+            text-align:center;
+            color:blue;
+            font-size:18px;
+            line-height:40px;
+        }
+        p:last-child a{
+            text-decoration:none;
+            color:blue;
+        }
+        p:last-child a::after{
+            content:' - ' attr(href);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+            <p>XX 쇼핑몰을 이용해 주셔서 대단히 감사합니다.</p>
+            <p>vvip고객님께</p>
+            <p>vvip고객님을 최대로 귀하게 모시는 쿠폰을 발송해 드립니다.</p>
+            <p>From admin</p>
+            <p><a href="http://www.tjoeunit.co.kr">더조은쇼핑몰</a></p>
+    </div>
+</body>
+</html>
