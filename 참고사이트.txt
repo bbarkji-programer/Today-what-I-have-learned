@@ -2,3 +2,7 @@ www.w3schools.com - tutorial sites
 http://pxtoem.com/ - font size 
 lipsum.com - texts
 https://fonts.google.com/ - free fonts by google
+https://software.naver.com/ - font,API...
+http://placehold.it/200x100 - dummy image
+http://www.colorzilla.com/gradient-editor/ - gradient source
+https://mediaqueri.es/ - UI참고 사이트

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #contain{
+            margin:0 auto;
+            width:420px;
+        }
+        #contain #r1, #r2{
+            height:110px;
+            border:2px solid lightgrey;
+            box-sizing:border-box;
+        }
+        #contanin #r1, #contain #r2{
+            overflow:hidden;
+        }
+        #contain #r1 .first, #contain #r1 .second{
+            width:100px;
+            height:100px;
+            border:2px solid red;
+            box-sizing:border-box;
+            float:left;
+            margin:3px 0 3px 3px;
+            line-height:100px;
+            text-align:center;
+        }
+        #contain #r2 .first, #contain #r2 .second{
+            width:100px;
+            height:100px;
+            border:2px solid red;
+            box-sizing:border-box;
+            float:right;
+            margin:3px 3px 3px 0px;
+            line-height:100px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div id="contain">
+        <div id="r1">
+            <div class="first">first</div>
+            <div class="second">second</div>
+        </div>
+        <div id="r2">
+            <div class="first">first</div>
+            <div class="second">second</div>
+        </div>
+    </div>
+</body>
+</html>

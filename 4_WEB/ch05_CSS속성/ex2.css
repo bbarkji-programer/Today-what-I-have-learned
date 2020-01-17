@@ -1,0 +1,120 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+#contain {
+    margin: 0 auto;
+    width: 800px;
+    height: 640px;
+    border: 1px solid lightgrey;
+    position:relative;
+}
+#img {
+   width: 100%;
+   height: 100%;
+   background-image: url('https://i.pinimg.com/originals/a4/a4/88/a4a48866707b4373215d2ab656bd0ca0.jpg');
+   position:absolute;
+   top: 0;
+   left: 0;
+   opacity:0.3;
+   z-index: -9999;
+   }
+#header{
+    width: 790px;
+    height: 100px;
+    background-color:yellow;
+    border: 1px solid lightgrey;
+    box-sizing:border-box;
+    margin:5px;
+    padding:5px;
+    line-height:100px;
+    text-align:center;
+    font-weight:bold;
+    font-size:1.3em;
+    z-index:100;
+}
+#nav{
+    width: 790px;
+    height: 115px;
+    border: 1px solid lightgrey;
+    box-sizing:border-box;
+    margin:5px;
+    padding:5px;
+    text-align:center;
+    font-weight:bold;
+    font-size:1.3em;
+    z-index:100;
+}
+#nav ul{
+    overflow:hidden;
+    margin:10px 0 0 25px;
+}
+#nav ul li{
+    list-style:none;
+    line-height:50px;
+    width:140px;
+    margin:3px ;
+    background-color:lightpink;
+    font-size:1.0em;
+    font-weight:bold;
+    color:deeppink;
+    float:left;
+}
+#nav ul li:nth-child(1){
+    border-radius:25px 0 0 25px;
+}
+#nav ul li:nth-child(5){
+    border-radius:0 25px 25px 0;
+}
+#nav ul li a{
+    text-decoration:none;
+    color:deeppink;
+}
+#section {
+    width: 790px;
+    height: 300px;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 5px;
+    overflow: hidden;
+    z-index: 100;
+}
+#content{
+    width:542px;
+    height:282px;
+    border:1px solid lightgrey;
+    box-sizing:border-box;
+    margin:3px;
+    padding:5px;
+    float:left;
+    text-align:center;
+    font-size:1.3em;
+    font-weight:bold;
+}
+#banner {
+    width: 224px;
+    height: 282px;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    margin: 3px;
+    padding: 5px;
+    float: right;
+    text-align:center;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+#footer {
+    width: 790px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    margin: 5px;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3em;
+    z-index: 100;
+}
+

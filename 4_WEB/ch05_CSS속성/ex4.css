@@ -1,0 +1,47 @@
+﻿*{
+    margin:0;
+    padding:0;
+}
+header{
+    width:100%;
+}
+#header_nav{
+    width:100%;
+    height:30px;
+    margin:0 auto;
+    background-color:#2d1152;
+    color:white;
+    font-weight:bold;
+    position:relative;
+}
+#header_nav .gnb{
+    height:30px;
+    position:absolute;
+    left:20px;
+}
+.gnb > ul li {
+    float: left;
+    list-style: none;
+    line-height: 30px;
+    text-align: center;
+    padding: 0 30px 0 0;
+    margin: 0 auto;
+}
+.gnb>ul li a{
+    text-decoration:none;
+    color:white;
+}
+.survivalFootball > ul li {
+    float: right;
+    list-style: none;
+    line-height: 30px;
+    text-align: center;
+    margin:0 auto;
+}
+.survivalFootball > ul li img{
+    height:30px;
+}
+.survivalFootball > ul li a {
+    text-decoration: none;
+    color: white;
+}
