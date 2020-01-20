@@ -1,0 +1,236 @@
+﻿@font-face {
+    font-family: 'Arvo';
+    src: url('../font/Arvo-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arvo';
+}
+
+a {
+    text-decoration: none;
+}
+
+#header_nav {
+    width: 100%;
+    min-width:1000px;
+    height: 30px;
+    overflow: hidden;
+    background-color: #2d1152;
+    color: white;
+    font-weight: bold;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+    #header_nav .gnb ul {
+        padding: 0 0 0 20px;
+    }
+
+        #header_nav .gnb ul li {
+            float: left;
+            list-style: none;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 20px 0 0;
+        }
+
+    #header_nav ul li a {
+        color: white;
+    }
+
+    #header_nav .survivalFootball ul li {
+        float: right;
+        list-style: none;
+        line-height: 30px;
+        text-align: center;
+        padding: 0 5px 0 0;
+        font-size:0.8em;
+    }
+
+        #header_nav .survivalFootball ul li img {
+            height: 30px;
+        }
+
+#header_info {
+    width: 1000px;
+    min-width: 1000px;
+    margin: 0 auto;
+    height: 100px;
+    overflow: hidden;
+}
+
+    #header_info .logo{
+        float: left;
+        margin:10px;
+    }
+
+    #header_info .search ul li {
+        float: left;
+        list-style: none;
+        height: 56px;
+        line-height: 56px;
+        text-align: center;
+        margin:20px 10px 0 0;
+    }
+
+        #header_info .search ul li:nth-child(1) input[name=search] {
+            border: 2px solid #3488d9;
+            width: 400px;
+            height: 37px;
+            box-sizing: border-box;
+        }
+
+        #header_info .search ul li:nth-child(2) .btn_search {
+            width: 124px;
+            height: 37px;
+            font-weight: bold;
+            font-size: 12px;
+            background-image: url("../image/search_btn.png");
+            background-size: 124px 37px;
+            color: white;
+            border:0;
+            outline:none;
+        }
+
+#hearder_info .service {
+    float: right;
+}
+
+#header_info .service ul li {
+    float: right;
+    list-style: none;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0 0 0;
+}
+
+    #header_info .service ul li a {
+        color: black;
+        display:block;
+        padding:5px 10px;
+    }
+
+#content {
+    width: 1000px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+#main_menu {
+    width: 155px;
+    color: black;
+    font-weight: bold;
+    float: left;
+}
+
+    #main_menu li {
+        list-style: none;
+        margin:  0 3px 30px 0;
+    }
+
+        #main_menu li a {
+            color: black;
+        }
+
+#main {
+    width: 600px;
+    float: left;
+    margin: 0 auto;
+}
+
+    #main .mainBigBanner {
+        height: 300px;
+        border: 1px solid lightgrey;
+        box-sizing: border-box;
+        margin: 0 3px 0 0;
+    }
+
+    #main .mainSlideBanner {
+        height: 150px;
+        border: 1px solid lightgrey;
+        box-sizing: border-box;
+        margin: 3px 3px 0 0;
+    }
+
+    #main .mainMenu ul {
+        overflow: hidden;
+        background-color: #500095;
+        height: 50px;
+        line-height: 50px;
+        margin: 3px 3px 0 0;
+        padding: 0 0 0 35px;
+    }
+
+        #main .mainMenu ul li {
+            list-style:none;
+            float: left;
+            text-align: center;
+            color: white;
+            padding: 0 10px 0 10px;
+        }
+
+        #main .mainMenu ul a {
+            color: white;
+        }
+
+    #main .mainTopic {
+        height: 100px;
+        border: 1px solid lightgrey;
+        box-sizing: border-box;
+        margin: 3px 3px 0 0;
+    }
+
+#main_banner {
+    width: 230px;
+    float: left;
+}
+
+    #main_banner .hitSearchWord, .ad1 {
+        height: 100px;
+        border: 1px solid lightgrey;
+        box-sizing: border-box;
+    }
+    #main_banner .ad1 {
+        height: 100px;
+        border: 1px solid lightgrey;
+        box-sizing: border-box;
+        margin: 3px 0 0 0;
+    }
+
+    #main_banner .ad2, .ad3 {
+        height: 150px;
+        border: 1px solid lightgrey;
+        box-sizing: border-box;
+        margin: 3px 0 0 0;
+    }
+
+    #main_banner .ad4 {
+        height: 200px;
+        border: 1px solid lightgrey;
+        box-sizing: border-box;
+        margin: 3px 0 0 0;
+    }
+
+footer {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+    footer ul {
+        width: 1000px;
+        overflow: hidden;
+        height: 100px;
+        padding: 0 0 0 155px;
+    }
+
+        footer ul li {
+            list-style: none;
+            float: left;
+            margin: 10px;
+            text-align: center;
+        }
