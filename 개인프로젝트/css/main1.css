@@ -1,0 +1,134 @@
+﻿/* 페이지 초기화 */
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+li{
+    list-style:none;
+}
+img{
+    border:0;
+}
+
+/* header */
+header{
+    height:180px;
+    line-height:180px;
+    text-align:center;
+    position:relative;
+}
+
+/* header의 menu */
+header .menu img{
+    position:absolute;
+    left:5px;
+    top:135px;
+}
+
+/* header의 .search */
+header .search{
+    width:250px;
+    height:30px;
+}
+
+header .search input[type=text]{
+    width:200px;
+    height:30px;
+    border:1px solid lightgrey;
+    box-sizing:border-box;
+    outline:none;
+    position:absolute;
+    left:50px;
+    top:140px;
+    padding:3px;
+}
+
+header .search input[type=submit]{
+    width:30px;
+    height:30px;
+    background-image:url('../image/search.png');
+    border:0;
+    outline:none;
+    position:absolute;
+    left:260px;
+    top:140px;
+}
+/* header의 a.logo */
+header a.logo img{
+    height:120px;
+}
+
+/* header의 .btn_sub, .btn_log */
+header .btn_sub{
+    width: 100px;
+    height: 40px;
+    background-color:white;
+    border:0;
+    outline:0;
+    font-size:1.5em;
+    font-family:'Bauhaus 93';
+    position:absolute;
+    right:120px;
+    top:140px;
+}
+
+header .btn_log {
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    border: 0;
+    outline: 0;
+    font-size: 1.5em;
+    font-family: 'Bauhaus 93';
+    position:absolute;
+    right:10px;
+    top:140px;
+}
+
+/* #gnb */
+#gnb ul{
+    background-color:white;
+    height:100%;
+    width:200px;
+    box-shadow: -10px 10px 20px 1px grey;
+}
+
+#gnb ul li {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-family: 'Bauhaus 93';
+}
+
+#gnb{
+    display:none;
+}
+
+/* #toggle */
+#toggle:checked ~ #gnb{
+    display:block;
+}
+
+#toggle{
+    display:none;
+}
+
+/* #lnb */
+#lnb ul{
+    overflow:hidden;
+}
+#lnb ul li{
+    float:left;
+    width:20%;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid black;
+    box-sizing:border-box;
+    font-family:'Bauhaus 93';
+}
