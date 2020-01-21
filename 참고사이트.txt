@@ -8,3 +8,5 @@ http://placehold.it/200x100 - dummy image
 http://www.colorzilla.com/gradient-editor/ - gradient source
 
 https://mediaqueri.es/ - UI참고 사이트
+
+<link rel="stylesheet" href="css/main.css" />

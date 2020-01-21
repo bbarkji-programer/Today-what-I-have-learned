@@ -1,11 +1,8 @@
-﻿@font-face {
-    font-family: 'NotoSerif';
-    src: url('../NotoSerif-Regular.ttf');
-}
+﻿/* * * 페이지 초기화 * * */
 * {
     margin: 0;
     padding: 0;
-    font-family: 'NotoSerif';
+    font-family:sans-serif;
 }
 li{
     list-style:none;
@@ -13,27 +10,36 @@ li{
 a{
     text-decoration:none;
 }
-#header_info1{
+img{
+    border:0;
+}
+/* * * header * * */
+header{
     width:100%;
-    overflow:hidden;
-    margin:0 auto;
+}
+/* * * header의 #header_info1 * * */
+#header_info1{
+    height:45px;
+    line-height:45px;
+    text-align:center;
+    position:relative;
 }
 #header_info1 .menu{
-    float:left;
+    position:absolute;
+    left:0px;
+    top:0px;
 }
 #header_info1 .menu img {
     height:45px;
-    }
-#header_info1 .search{
-    float:left;
-    height:45px;
-    margin: 7px 0;
+    width:45px;
 }
 #header_info1 .search input[name=search] {
     height: 30px;
     width: 200px;
-    border: 1px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
     box-sizing:border-box;
+    font-size:1.2em;
+    outline:none;
 }
 #header_info1 .btnsearch{
     float:left;

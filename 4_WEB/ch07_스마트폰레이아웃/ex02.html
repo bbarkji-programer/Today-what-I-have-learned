@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"
+          name="viewport"
+          content="width=device-width, initial-scale:1.0, maximum-scale=2.0, minimum-scale=0.7"/>
+    <title></title>
+    <style>
+        /* 페이지 초기화 */
+        *{
+            margin:0;
+            padding:0;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        a{
+            text-decoration:none;
+            color:black;
+        }
+        li{
+            list-style:none;
+        }
+        img{
+            border:0;
+        }
+        /* header */
+        header{
+            height:100px;
+            background-color:#ea8f00;
+        }
+        /* header의 #logo_wra p*/
+        header #logo_wrap{
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            position:relative;
+        }
+        header #logo_wrap img.menu{
+            position:absolute;
+            left:10px;
+            top:0;
+        }
+        header #logo_wrap img.myinfo{
+            position:absolute;
+            right:10px;
+            top:0;
+        }
+        header  #logo_wrap a.logo{
+            font-size:1.5em;
+            font-weight:bold;
+            color:white;
+        }
+        /* header의 #search */
+        header #search{
+            height:50px;
+            position:relative;
+        }
+        header #search input[type=text]{
+            width:100%;
+            height:50px;
+            border:3px solid #ea8f00;
+            box-sizing:border-box;
+            padding:5px 55px 5px 5px;
+            font-size:1.2em;
+            outline:none;
+        }
+        header #search input[type=submit]{
+            width:50px;
+            height:50px;
+            background-image:url('0121_imgEx2/search.png');
+            border:0;
+            outline:none;
+            position:absolute;
+            right:0;
+            top:0;
+        }
+        /* * * #lnb * * */
+        #lnb ul{
+            overflow:hidden;
+            margin:7px 0;
+        }
+        #lnb ul li{
+            float:left;
+            width:16.6666%; /* 메뉴 간격 균일하게*/
+            text-align:center;
+            border-right:1px solid #ea8f00;
+            box-sizing:border-box;
+            color:darkblue;
+            font-weight:bold;
+        }
+        #lnb ul li:last-child{
+            border:0;
+        }
+        #lnb ul li a{
+            display:block;
+            color:darkblue;
+        }
+        /* * * section의 #section1 * * */
+        section #section1 .row1,
+        section #section1 .row2,
+        section #section1 .row3 {
+            overflow: hidden;
+        }
+        section #section1 .row1 div,
+        section #section1 .row2 div,
+        section #section1 .row3 div{
+            width:50%;
+            height:200px;
+            float:left;
+            border:1px solid white;
+            box-sizing:border-box;
+        }
+        section #section1 img{
+            width:100%;
+            height:100%;
+        }
+        /* * * section의 #section2 * * */
+        section #section2{
+            margin:7px;
+        }
+        section #section2 ul li{
+            padding:8px;
+            border:1px solid lightgrey;
+            /* * * 말줄임 태그* * */
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        /* * * section의 #section3 * * */
+        section #section3 ul li{
+            height:120px;
+            padding:10px;
+            margin: 7px;
+            border:1px solid lightgrey;
+            box-sizing:border-box;
+            position:relative;
+        }
+        section #section3 ul li p.img{
+            position:absolute;
+            left:10px;
+            top:10px;
+            width:100px;
+            height:100px;
+        }
+        section #section3 ul li p.text{
+            width:100%-20px; /* 테블릿 pc 레이아웃에서는 다른 방법으로*/
+            padding: 10px 20px 10px 120px;
+        }
+        section #section3 ul li p.text span:first-child{ /* 말줄임, 글씨 크게 blue*/
+            display:block;
+            font-size:1.2em;
+            font-weight:bold;
+            color:darkblue;
+            /* 말줄임 */
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        section #section3 ul li p.text span:last-child{ /* 글씨 작게 */
+            font-size:0.8em;
+        }
+        section #section3 ul li p.text span:first-child a{
+            color:darkblue;
+        }
+        /* * * footer * * */
+        footer{
+            background-color:#ea8f00;
+            text-align:center;
+        }
+        footer p:nth-child(1){
+            padding:5px;
+        }
+        footer p:nth-child(2){
+            font-size:1.2em;
+            height:30px;
+            line-height:20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo_wrap">
+            <img src="0121_imgEx2/menu.png" 
+                 class="menu" 
+                 alt="메뉴아이콘"/>
+            <a href="ex02.html" class="logo">mobile logo</a>
+            <img src="0121_imgEx2/myinfo.png"
+                 class="myinfo"
+                 alt="내정보아이콘" />
+        </div>
+        <div id="search">
+            <form action="#" method="get">
+                <input type="text" name="queryword" />
+                <input type="submit" value="" />
+            </form>
+        </div>
+    </header>
+    <div id="lnb">
+        <ul>
+            <li>
+                <a href="#">lnb1</a>
+            </li>
+            <li>
+                <a href="#">lnb2</a>
+            </li>
+            <li>
+                <a href="#">lnb3</a>
+            </li>
+            <li>
+                <a href="#">lnb4</a>
+            </li>
+            <li>
+                <a href="#">lnb5</a>
+            </li>
+            <li>
+                <a href="#">lnb6</a>
+            </li>
+        </ul>
+    </div>
+    <section>
+        <div id="section1">
+            <div class="row1">
+                <div>
+                    <a href="https://mirakle.mk.co.kr/view.php?year=2020&no=37554">
+                        <img src="https://file.mk.co.kr/meet/neds/2020/01/image_readtop_2020_37554_15788138894048825.jpg" alt="1행1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.hankyung.com/economy/article/202001175221a">
+                        <img src="https://img.hankyung.com/photo/202001/01.21463705.1.jpg" alt="1행2열" />
+                    </a>
+                </div>
+            </div>
+            <div class="row2">
+                <div>
+                    <a href="https://www.jungle.co.kr/magazine/201165">
+                        <img src="https://www.jungle.co.kr/image/890c4db548409b551b105c76" alt="2행1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="http://www.newsis.com/view/?id=NISX20200120_0000893796&cID=10701&pID=10700">
+                        <img src="http://image.newsis.com/2020/01/20/NISI20200120_0000465166_web.jpg?rnd=20200120105809" alt="2행2열" />
+                    </a>
+                </div>
+            </div>
+            <div class="row3">
+                <div>
+                    <a href="https://www.hankyung.com/economy/article/202001175221a">
+                        <img src="https://img.hankyung.com/photo/202001/01.21463705.1.jpg" alt="3행1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://mirakle.mk.co.kr/view.php?year=2020&no=37554">
+                        <img src="https://file.mk.co.kr/meet/neds/2020/01/image_readtop_2020_37554_15788138894048825.jpg" alt="3행2열" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="section2">
+            <ul>
+                <li>
+                    <a href="https://mirakle.mk.co.kr/view.php?year=2020&no=37554">
+                        [스타트업트렌드 wadiz on? ] 좋아하는 전시에 투자하세요
+                    </a>
+                </li>
+                <li>
+                    <a href="https://mirakle.mk.co.kr/view.php?year=2020&no=37554">
+                        예술의 전당은 흔히 유명한 전시, 공연, 이벤트가 펼쳐지는 대표적인 곳 중에 하나로 잘 알려져 있다.
+                    </a>
+                </li>
+                <li>
+                    <a href="https://mirakle.mk.co.kr/view.php?year=2020&no=37554">
+                        평일과 주말에 관계 없이 문화 행사를 즐기기 위한 인파로 문전성시를 이루며 연중 볼거리가 많은 행사들로 가득 차 있다.
+                    </a>
+                </li>
+                <li>
+                    <a href="https://mirakle.mk.co.kr/view.php?year=2020&no=37554">
+                        첫번째 살펴볼 전시는 아킬레 카스틸리오니 한국특별전이다. 이탈리아가 가장 사랑하는 디자인의 거장으로 불리며 세계적인 디자이너들의 스승으로도 존경 받는 아킬레 카스틸리오니의 탄생 100주년을 맞아 아시아 최초로 대규모 전시를 앞두고 있다.
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="section3">
+            <ul>
+                <li>
+                    <p class="img"><img src="http://placehold.it/100x100" alt="기사이미지1" /></p>
+                    <p class="text">
+                        <span>
+                            <a href="https://mirakle.mk.co.kr/view.php?year=2020&no=37554">
+                                이탈리아가 가장 사랑하는 디자인의 거장으로 불리며 세계적인 디자이너들의 스승으로도 존경 받는 아킬레 카스틸리오니의 탄생 100주년을 맞아 아시아 최초로 대규모 전시를 앞두고 있다.
+                            </a>
+                        </span>
+                        <span>
+                            <a href="https://mirakle.mk.co.kr/view.php?year=2020&no=37554">
+                                이탈리아가 가장 사랑하는 디자인의 거장으로 불리며 세계적인 디자이너들의 스승으로도 존경 받는 아킬레 카스틸리오니의 탄생 100주년을 맞아 아시아 최초로 대규모 전시를 앞두고 있다.
+                            </a>
+                        </span>
+                    </p>
+                </li>
+                <li>
+                    <p class="img"><img src="http://placehold.it/100x100" alt="기사이미지1" /></p>
+                    <p class="text">
+                        <span>
+                            <a href="https://mirakle.mk.co.kr/view.php?year=2020&no=37554">
+                                이탈리아가 가장 사랑하는 디자인의 거장으로 불리며 세계적인 디자이너들의 스승으로도 존경 받는 아킬레 카스틸리오니의 탄생 100주년을 맞아 아시아 최초로 대규모 전시를 앞두고 있다.
+                            </a>
+                        </span>
+                        <span>
+                            <a href="https://mirakle.mk.co.kr/view.php?year=2020&no=37554">
+                                이탈리아가 가장 사랑하는 디자인의 거장으로 불리며 세계적인 디자이너들의 스승으로도 존경 받는 아킬레 카스틸리오니의 탄생 100주년을 맞아 아시아 최초로 대규모 전시를 앞두고 있다.
+                            </a>
+                        </span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p><img src="0121_imgEx2/logo.png" /></p>
+        <p>서울시 XX구 XX동 OOO XX 빌딩 803호</p>
+    </footer>
+</body>
+</html>
