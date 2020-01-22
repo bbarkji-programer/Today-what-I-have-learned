@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        var kor = Number(prompt("국어 점수를 입력하세여"));
+        var eng = Number(prompt("영어 점수를 입력하세여"));
+        var mat = Number(prompt("수학 점수를 입력하세여"));
+        var avg = (kor + eng + mat) / 3
+        tempAvg = (avg == 100) ? avg - 1 : avg;
+            switch (parseInt(tempAvg / 10)) {
+                case 9:
+                    document.write('평균 : '+avg+'점 수 네여');
+                    break;
+                case 8:
+                    document.write('평균 : '+avg+'점 우 네여');
+                    break;
+                case 7:
+                    document.write('평균 : '+avg+'점 미 네여');
+                    break;
+                case 6:
+                    document.write('평균 : '+avg+'점 양 네여');
+                    break;
+                case 5: case 4: case 3: case 2: case 1: case 0:
+                    document.write('평균 : '+avg+'점 가 네여');
+                default:
+                    document.write('숫자를 제대로 입력해여');
+            }
+    </script>
+</head>
+<body>
+</body>
+</html>

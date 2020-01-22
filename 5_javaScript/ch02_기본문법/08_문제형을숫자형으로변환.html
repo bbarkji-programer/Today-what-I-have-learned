@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        document.write('<h2>Number함수 이용</h2>');
+        var str = 'a';
+        var i = Number(str);
+        document.write('str = ' + str + ' - str의 타입 ' + typeof (str) + '<br>');
+        document.write('i = ' + i + ' - str의 타입 ' + typeof (i) + '<br>');
+        document.write('<h2>paseInt함수 이용</h2>');
+        var str = 'a';
+        var i = parseInt(str);
+        document.write('str = ' + str + ' - str의 타입 ' + typeof (str) + '<br>');
+        document.write('i = ' + i + ' - str의 타입 ' + typeof (i) + '<br>');
+        if (isNaN(i)) { // i가 NaN인지 물어보는 함수. NaN이면 ture, 아니면 false
+            document.write('수가 아니여');
+        } else {
+            document.write('수여');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+(객관식)
+1. <img src = "../image/myImage.jpg" alt="내이미지" />
+
+2. 순서가 있는 리스트 태그 : <ol><li></li></ol>
+   순서가 없는 리스트 태그 : <ul><li></li></ul>
+
+3. 
+<form action="#">
+	국적 <select name="paramName">
+		<option value="ko"> 대한민국 </option>
+		<option value="ch"> 중국 </option>
+            </select>  
+	    <input type="submit" />
+ - 화면 출력 값 : 대한민국
+ - 실제 전달 값 : paramName=ko, paramName=ch
+
+4. 속성선택자(예:input[type=password]{}), 반응선택자(hover), id선택자(#), class선택자(.)
+
+5. 테두리를 둥글게 처리하고자 하는 속성 border-radius:15px;
+
+6. a 태그 밑줄 없애는 속성 text-decoration:none;
+
+7. css 주석, body 주석, javaScript 주석
+
+8. 화면에서 안보이게 하는 속성 display:none;(공간까지 없앰), visibility:hidden;(공간은 확보)
+
+9. CSS3 media 규칙 
+ - 종류 : all, print, screen....
+ - 접근하는 디바이스에 따라 다르게 보인다...
+
+(주관식)
+10. 반응형 웹으로 디자인하고자 할 때, 빈 칸에 공통으로 들어갈 단어 : @media
+
+11. block 타입의 태그를 수평으로 표현하기 위한 CSS(주) : 부모에 overflow:hidden; 수평을 할 곳에 float:left;
+ 예) ul{
+	overflow:hidden;
+	}
+    li{
+	float:left;
+	}
+
+12. 스마트폰, 태블릿 레이아웃에서 사용하는 viewport에 대한 내용
+<meta charset="utf-8" name="viewport"
+	content="width=devide-width, initial-scale=1.0, user-scalabale=no (또는 mim-scale, max-scale)" />
+
+13. css 파일을 분리할 때 head에 추가할 내용
+<link rel="stylesheet" href="css/main1.css" />
+
+14. html 파일 만들기 - 입력상자에 id를 4글자 이상 입력하지 않았는지 유효성 체크. 4글자 이상 입력하지 않고 submit 버튼을 클릭했을 때 '아이디는 4글자 이상 입력하세요.'라는 경고창과 함께 아이디를 입력하는 창에 포커스 
+<!DOTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script>
+		function chk(){
+			if(frm.id.value.length < 4){
+				alert("아이디는 4글자 이상 입력하세요."
+				frm.id.focus();
+				return false;
+				}
+	</script>
+</head>
+<body>
+	<form action="#" method="get" onsubmit="return chk()" name="frm">
+		ID : <input type="text" name="id" />
+		<input type="submit" value="전송" />
+	</form>
+</body>
+</html>
+
+15~18 자바스크립트는 3~5장까지 내용
+
