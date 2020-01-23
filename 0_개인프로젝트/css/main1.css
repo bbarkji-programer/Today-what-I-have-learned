@@ -21,13 +21,6 @@ header{
     text-align:center;
 }
 
-/* 상단 고정용 #fixed */
-header fixed{
-    position:fixed;
-    top:0;
-    left:0;
-}
-
 /* header의 #header_fixed */
 header #header_fixed{
     height:40px;
@@ -98,25 +91,28 @@ header #header_fixed .btn_log {
 }
 
 /* #gnb */
-header #fixed #gnb{
-    display:none;
-    position:absolute;
-    top:40px;
-    left:0;
+#gnb {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    border-right: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
 }
-header #fixed #gnb ul{
+#gnb ul{
     background-color:white;
     height:100%;
     width:200px;
     box-shadow: -10px 10px 20px 1px grey;
 }
-header #fixed #gnb ul li {
+#gnb ul li {
     height: 100px;
     line-height: 100px;
     text-align: center;
     font-family: 'Bauhaus 93';
+    font-size:1.3em;
 }
-header #gnb ul li a{
+#gnb ul li a{
     display:block;
 }
 
@@ -147,15 +143,20 @@ header a.logo img {
     border-bottom: 1px solid black;
     box-sizing:border-box;
     font-family:'Bauhaus 93';
+    font-size:1.3em;
 }
 
 /* section */
 /* #content_left */
-/* #video_wrap */
-/* #video_wrap .video_main iframe */
-#video_wrap .video_main iframe{
-    width:560px;
-    height:315px;
+#content_left{
+    position:relative;
+}
+#content_left .video iframe{
+    width:1000px;
+    height:755px;
     border:0;
-
+    position:absolute;
+    top:10px;
+    left:10px;
+    margin-bottom:20px;
 }
