@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        fun();
+        // funVar(); // 익명 함수는 변수 선언이 되기 전까지는 실행이 안된당.
+        function fun() {
+            alert('선언적 함수 호출됨');
+        }
+        var funVar = function () {
+            alert('익명 함수 호출됨');
+        }
+        fun();
+        funVar();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
