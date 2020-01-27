@@ -1,50 +1,84 @@
-(������)
+﻿(객관식)
 
 1. 
-<img src = "../image/myImage.jpg" alt="���̹���" />
+<img src = "../image/myImage.jpg" alt="내이미지" />
 
 2. 
-������ �ִ� ����Ʈ �±� : <ol><li></li></ol>
-������ ���� ����Ʈ �±� : <ul><li></li></ul>
+순서가 있는 리스트 태그 : <ol><li></li></ol>
+순서가 없는 리스트 태그 : <ul><li></li></ul>
 
 3. 
 <form action="#">
-	���� <select name="paramName">
-		<option value="ko"> ���ѹα� </option>
-		<option value="ch"> �߱� </option>
+	국적 <select name="paramName">
+		<option value="ko"> 대한민국 </option>
+		<option value="ch"> 중국 </option>
             </select>  
 	    <input type="submit" />
- - ȭ�� ��� �� : ���ѹα�
- - ���� ���� �� : paramName=ko, paramName=ch
+ - 화면 출력 값 : 대한민국, 중국
+ - 실제 전달 값 : paramName=ko, paramName=ch
 
 4. 
-�Ӽ�������(��:input[type=password]{}), ����������(hover), id������(#), class������(.)
+- 속성선택자
+1) 선택자[속성=값]{} 속성 안의 값이 특정 값을 단어로 포함
+	input[type='password']{}
+2) 선택자[속성^=값]{}속성 안의 값이 특정 값으로 시작
+	input[type^='te']{}
+3) 선택자[속성$=값]{} 속성 안의 값이 특정 값으로 끝
+	input[type$='ame']{}
+
+- 동위(형제) 선택자
+h3~div{ } : h3 태그의 동위 선택자 모두
+h3+div{} : h3 태그의 동위 선택자 중 바로 다음 것
+
+- 반응선택자(hover) : 마우스를 올려놨을 때
+li:hover{ }
+
+- 상태 선택자 : 상태에 따라 CSS 속성 바뀌게 설정
+input:focus{ }
+
+- 구조 선택자 : 구조에 따라 CSS 속성 설정
+#wrap ul li:nth-child(2n+1){ }
+#wrap ul li:first-child:{ }
+#wrap ul li:last-child:{ }
+
 
 5. 
-�׵θ��� �ձ۰� ó���ϰ��� �ϴ� �Ӽ� border-radius:15px;
+테두리를 둥글게 처리하고자 하는 속성 border-radius:15px;
 
 6. 
-a �±� ���� ���ִ� �Ӽ� text-decoration:none;
+a 태그 밑줄 없애는 속성 text-decoration:none;
 
 7. 
-css �ּ�, body �ּ�, javaScript �ּ�
+css 주석 : /* 주석 */
+body 주석 : <!-- 주석 -->
+javaScript 주석 : // 한줄 주석 , /* 여러줄 주석 */
 
 8. 
-ȭ�鿡�� �Ⱥ��̰� �ϴ� �Ӽ� display:none;(�������� ����), visibility:hidden;(������ Ȯ��)
+화면에서 안보이게 하는 속성 display:none;(공간까지 없앰), visibility:hidden;(공간은 확보)
 
 9. 
-CSS3 media ��Ģ 
- - ���� : all, print, screen....
- - �����ϴ� ����̽��� ���� �ٸ��� ���δ�...
+CSS3 media 규칙 
+@media : link 태그에 media 속성을 이용해 상황에 따른 css 적용
+<link rel="stylesheet" href="css/title.css" media="screen"/>
+ - all :  모든 미디어 타입
+- arural :  음성 합성장치
+- braille : 점자 표시장치
+- handheld : 작은 스크린
+- print : 인쇄용
+- projection : 프로젝터 
+- screen :  컴퓨터 스크린
+- tv 
+- embossed : 페이지에 인쇄된 점자
+ - 접근하는 디바이스에 따라 다르게 보인다...
 
 
-(�ְ���)
+(주관식)
 10. 
-������ ������ �������ϰ��� �� ��, �� ĭ�� �������� �� �ܾ� : @media
+반응형 웹으로 디자인하고자 할 때, 빈 칸에 공통으로 들어갈 단어 : @media
 
 11. 
-block Ÿ���� �±׸� �������� ǥ���ϱ� ���� CSS(��) : �θ� overflow:hidden; ������ �� ���� float:left;
- ��) ul{
+block 타입의 태그를 수평으로 표현하기 위한 CSS(주) : 부모에 overflow:hidden; 수평을 할 곳에 float:left;
+ 예) ul{
 	overflow:hidden;
 	}
     li{
@@ -52,18 +86,18 @@ block Ÿ���� �±׸� �������� ǥ���ϱ� ���� CSS(��) : �θ� overflow:hidden; ���
 	}
 
 12. 
-����Ʈ��, �º��� ���̾ƿ����� ����ϴ� viewport�� ���� ����
+스마트폰, 태블릿 레이아웃에서 사용하는 viewport에 대한 내용
 <meta charset="utf-8" name="viewport"
-	content="width=devide-width, initial-scale=1.0, user-scalabale=no (�Ǵ� mim-scale, max-scale)" />
+	content="width=devide-width, initial-scale=1.0, user-scalabale=no (또는 min-scale, max-scale)" />
 
 13. 
-css ������ �и��� �� head�� �߰��� ����
+css 파일을 분리할 때 head에 추가할 내용
 <link rel="stylesheet" href="css/main1.css" />
 
 14. 
-html ���� ����� - �Է»��ڿ� id�� 4���� �̻� �Է����� �ʾҴ��� ��ȿ�� üũ. 4���� �̻� �Է����� �ʰ� submit ��ư�� Ŭ������ �� '���̵�� 4���� �̻� �Է��ϼ���.'��� ���â�� �Բ� ���̵� �Է��ϴ� â�� ��Ŀ�� 
+html 파일 만들기 - 입력상자에 id를 4글자 이상 입력하지 않았는지 유효성 체크. 4글자 이상 입력하지 않고 submit 버튼을 클릭했을 때 '아이디는 4글자 이상 입력하세요.'라는 경고창과 함께 아이디를 입력하는 창에 포커스 
 
-<!DOTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8" />
@@ -71,23 +105,25 @@ html ���� ����� - �Է»��ڿ� id�� 4���� �̻� �Է����� �ʾҴ��� ��ȿ�� üũ. 4��
 	<script>
 		function chk(){
 			if(frm.id.value.length < 4){
-				alert("���̵�� 4���� �̻� �Է��ϼ���."
+				alert("아이디는 4글자 이상 입력하세요."
 				frm.id.focus();
 				return false;
 				}
+				return true;
+			}
 	</script>
 </head>
 <body>
 	<form action="#" method="get" onsubmit="return chk()" name="frm">
 		ID : <input type="text" name="id" />
-		<input type="submit" value="����" />
+		<input type="submit" value="전송" />
 	</form>
 </body>
 </html>
 
 
 15. 
-ȫ�浿 ���̺��� �־ forEach() Ȱ���� ����ϴ� ����(��ĭä���)
+홍길동 테이블에 넣어서 forEach() 활용해 출력하는 문제(빈칸채우기)
 
 <!DOCTYPE html>
 
@@ -104,7 +140,7 @@ html ���� ����� - �Է»��ڿ� id�� 4���� �̻� �Է����� �ʾҴ��� ��ȿ�� üũ. 4��
         }
     </style>
     <script>
-        var arr = ['ȫ�浿', '��ǻ�Ͱ���', 100];
+        var arr = ['홍길동', '컴퓨터공학', 100];
         document.write('<table>');
         document.write('<tr>');
         arr.forEach(function (data) {
@@ -121,32 +157,42 @@ html ���� ����� - �Է»��ڿ� id�� 4���� �̻� �Է����� �ʾҴ��� ��ȿ�� üũ. 4��
 16.
     <script>
         function chkIdOpen() {
-            window.open('12_Ŭ�����Լ�.html'); // �� â : open('���� �ִ� url')
-            window.alert('���â');
-            window.prompt('�Է���');
-            window.confirm('YESorNO �Է¹ޱ�')
+            window.open('12_클로저함수.html'); // 새 창 : open('실제 있는 url')
+            window.alert('경고창');
+            window.prompt('입력해');
+            window.confirm('YESorNO 입력받기')
         }
     </script>
 
 
-17. �Լ��� ���� Ʋ�� ��
-- (O) �Լ� �浿�� ���� ���� �����Լ�, �ڱ�ȣ�� �Լ� ���
-- (O) �Լ��� ���� �� ������ �Ű��������� ���ų� ���� ��� ����
-- (O) ���������� window ��ü�� �߰��ϴ� ���̴�.
+17. 함수의 설명 틀린 것
+- (O) 함수 충돌을 막기 위해 내부함수, 자기호출 함수 사용
+- (O) 함수를 만들 때 선언한 매개변수보다 적거나 많이 사용 가능
+- (O) 원래 함수에서 선언된 매개변수 보다 많이 사용하면 추가된 매개변수는 무시한다.
+- (O) 원래 함수에서 선언한 매개변수 보다 적게 사용하면 undefined로 입력된다.
+- (O) 변수선언은 window 객체에 추가하는 것이다.
+- (O) 익명 함수는 이름이 없으므로 변수에 넣어 사용해야 한다.
+- (O) 이름이 있는 함수를 '선언적 함수'라 부른다.
+- (O) 함수는 하나의 자료형이지만 뒤에 괄호를 열고 닫음으로써 코드를 실행한다. 이를 함수를 호출한다고 표현한다.
+- (O) 가변인자 함수 : 매개변수를 선언한 형태와 다르게 사용할 경우에도 매개변수를 모두 활용할 수 있는 함수. 즉, 매개변수의 개수가 변할 수 있는 함수. Array()
+- (O) 내부함수 : 함수 내부에 선언하는 함수
+- (O) 자기호출함수 : 다른 개발자에게 영향을 주지 않도록 함수를 생성하자마다 호출하는 경우
+- (O) 자바스크립트에서는 함수도 하나의 자료형이므로 매개변수에 넣을 수 있다.
+- (O) 매개변수에 넣어 전달된 함수를 콜백함수라 한다.
 
-18. Ÿ�̸� �Լ�
-- setTimeout(�ݹ��Լ�, �и�����) : �����ð� �� �ݹ��Լ��� �� �� ����
+18. 타이머 함수
+- setTimeout(콜백함수, 밀리세컨) : 일정시간 후 콜백함수를 한 번 실행
 	setTimeout(function () {
-           alert('3�� �����');
+           alert('3초 지났어여');
         }, 3000); 
 
-- setInterval(�ݹ��Լ�, �и�����) : ���� �ð� ���� �ݹ��Լ� ����
+- setInterval(콜백함수, 밀리세컨) : 일정 시간 마다 콜백함수 실행
 	setInterval(function () {
             document.write(new Date() + '<br>');
         }, 1000);
 
-- ���� �ð� ���� ����Ǵ� �Լ��� ���� �ð� �� ����
-- clearInterval(id) : ���õ� setInterval() Ÿ�̸� ����
+- 일정 시간 마다 실행되는 함수를 일정 시간 후 중지
+- clearInterval(id) : 셋팅된 setInterval() 타이머 중지
 
         var id = setInterval(function () {
             document.write(new Date() + '<br>');
@@ -154,6 +200,3 @@ html ���� ����� - �Է»��ڿ� id�� 4���� �̻� �Է����� �ʾҴ��� ��ȿ�� üũ. 4��
         setTimeout(function () {
             clearInterval(id);
         }, 10000);
-
-
-
