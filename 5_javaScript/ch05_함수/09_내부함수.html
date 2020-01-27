@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        /* A씨가 만든 js 부분 */
+       
+        function pythagoras(width, height) {
+            function square(x) { // 내부함수 (함수의 충돌을 피하기 위해)
+            return x * x;
+            }/// width=3 height=4
+            return Math.sqrt(square(width) + square(height));
+        }
+
+        /* B씨가 만든 js 부분 */
+        function square(width, height, hypotenuse) {
+            if (width * width + height * height == hypotenuse * hypotenuse) {
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+        document.write(pythagoras(4, 3));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

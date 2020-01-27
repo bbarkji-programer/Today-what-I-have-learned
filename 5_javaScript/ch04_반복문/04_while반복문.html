@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script> 
+        // while문이 1초 동안 몇 번 수행하는지 수행 횟수를 세 자리 마다 , 찍어서 출력
+        var cnt = 0;
+        var startTime = new Date().getTime(); // 현재의 밀리세컨 가져옴
+        // while문을 1초 동안
+        while (new Date().getTime() < startTime + 1000) {
+            cnt++;
+        }
+        // 세 자리마다 ,  찍기
+        var strCnt = String(cnt); // cnt를 String 객체로 변경
+        var strCntLength = strCnt.length;
+        var temp = strCntLength % 3; // temp=3으로 나눈 나머지
+
+        for (var idx = 0; idx < strCntLength; idx++) {
+            if (temp == 0) { // temp == 0인 경우만 {} 실행
+                temp = 3; // temp를 3으로 하고,
+                if (idx != strCntLength - 1 && idx != 0) // idx != 문자열길이(맨뒤가 아니고) idx != 0 이면(맨앞이 아니면), ',' 출력
+                    document.write(',');
+                }
+                document.write(strStrCnt[idx]);
+                temp--;               
+            }
+        document.write(cnt + '번 수행');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

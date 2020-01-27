@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        var array = [273, 32, '홍길동'];
+
+        // 1. 일반 for 문
+
+        document.write('<h2>1.일반for문</h2>');
+        for (var idx = 0; idx < array.length; idx++) {
+            document.write(idx + '번째 : ' + array[idx] + '<br>');
+        }
+
+        // 2. for-in 문(객체 출력 시)
+
+        document.write('<h2>2. for-in문</h2>');
+        for (var idx in array) {
+            document.write(idx + '번째 : ' + array[idx] + '<br>');
+        }
+
+        // 3. forEach() 함수
+
+        document.write('<h2>3. forEach()함수 이용1</h2>'); 
+        // 매개변수에 함수가 들어가는 함수
+        // 이 때 매개변수로 들어간 함수를 'callback' 함수라고 한다.
+        array.forEach(function (data, idx) {
+            document.write(idx + '번째 : ' + array[idx] + '<br>'); // 0번 인덱스부터 할 일을 여기에
+        }); 
+
+        // 3. forEach() 함수
+
+        document.write('<h2>3. forEach()함수 이용2</h2>'); 
+        // 매개변수에 함수가 들어가는 함수
+        // 이 때 매개변수로 들어간 함수를 'callback' 함수라고 한다.
+        [273, 32, '홍길동'].forEach(function (data, idx) {
+            document.write(idx + '번째 : ' + data + '<br>'); // 0번 인덱스부터 할 일을 여기에
+        }); 
+        document.write('<h2>array 데이터들만 출력</h2>');
+        array.forEach(function (data) {
+            document.write(data + '<br>');
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
