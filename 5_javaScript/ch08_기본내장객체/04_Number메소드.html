@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var num = 273.572345678;
+        document.write(num.toExponential(5) + '<br>'); // 지수형(소수점 뒤 5자리 남김)
+        document.write('소수점 1자리까지 : ' + num.toFixed(1) + '<br>');
+        document.write('소수점 1자리까지 : ' + Math.round(num*10)/10 + '<br>');
+        document.write(num.toFixed(5) + '<br>'); // 소수점 5자리까지
+        document.write(num.toPrecision(5) + '<br>'); // 수 5개로
+        document.write(num.toPrecision(7) + '<br>'); // 수 7개로
+    </script>
+</head>
+<body>
+
+</body>
+</html>

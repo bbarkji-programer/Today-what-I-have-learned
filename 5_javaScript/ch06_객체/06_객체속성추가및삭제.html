@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var student = {name : '윤인성'};
+        student.name = '홍인성'; // 이미 속성명이 있는데 또 하면, 속성값이 바뀜.
+        student.kor = 90; // 객체에 속성을 추가
+        student.eng = 100;
+        student.mat = 95;
+        student.hobby = '프로그래밍';
+        student.toString = function () {
+            output = '';
+            for (var key in this) {
+                if (key != 'toString') {
+                    output += key + ' : ' + this[key] + '<br>';
+                }
+            }
+            return output;
+        };
+        document.write(student + '<hr>');
+        delete (student.hobby); // student 객체의 hobby 속성 삭제
+        document.write(student);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var array = ['사과', 273, true, function () { }, [1, 2]]; // 배열은 [ ]로 만든다.
+        document.write(array[0]+'<br>'); // array를 access 하는 key는 index
+        document.write(typeof (array)+'<br>');
+        var object = { // 객체는 { }로 만든다.
+            '제품명': '7D 건조망고', // '속성명': '속성값'
+            '유형': '당절임',
+            '성분': '망고, 설탕, 치자황색소',
+            '원산지': '필리핀',
+            '가격': 7000,
+            '상태' : true
+        }; 
+        document.write(object.제품명 + ' ' + object.유형 + ' ' + object.성분 + ' ' + object.원산지 + ' ' + object.가격 + ' ' + object.상태 + '<br>'); // 객체를 access 하는 key는 속성명
+        document.write(object['제품명'] + ' ' + object['유형'] + ' ' + object['성분']);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

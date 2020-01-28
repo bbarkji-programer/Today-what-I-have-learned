@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table{
+            border:2px solid darkblue;
+            padding:20px;
+            margin:0 auto;
+            font-weight:bold;
+            width:500px;
+        }
+        td{
+            text-align:center;
+        }
+        td:last-child{
+            padding:10px;
+        }
+        input[type="text"], input[type="password"]{
+            border:1px solid darkblue;
+            width:250px;
+            padding:10px;
+        }
+        input[type="submit"], input[type="reset"], input[type="button"]{
+            background-color:dodgerblue;
+            color:white;
+            border-radius:10px;
+            border:1px solid darkblue;
+            width:100px;
+            padding:10px 0;
+        }
+    </style>
+    <script>
+        function chk() {
+
+            var patternSpe = /[@!#$%^&*()-_=+\<>'"]/;
+            var patternEng = /[a-zA-Z]/;
+            var patternNum = /[0-9]/;
+
+            if (frm.mail.value.indexOf('@') == -1
+                || frm.mail.value.indexOf('@') <= 0
+                || frm.mail.value.indexOf('@') >= frm.mail.value.length - 1
+                || frm.mail.value.indexOf('@') != frm.mail.value.lastIndexOf('@')) {
+                alert("잘못된 메일 형식입니다.");
+                frm.mail.focus();
+                return false;
+            } else if (frm.pw.value.length < 4
+                || patternSpe.test(frm.pw.value) != true
+                || patternEng.test(frm.pw.value) != true
+                || patternNum.test(frm.pw.value) != true) {
+                alert("비밀번호는 영어,숫자,특수문자 섞어서 4글자 이상이여~");
+                frm.pw.focus();
+                return false;
+            } else if (frm.pw.value != frm.pwchk.value) {
+                alert("비밀번호가 일치하지 않습니다.");
+                frm.pwchk.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" method="get"
+      onsubmit="return chk()"
+      name="frm">
+    <table>
+        <tr>
+            <td>
+                메일 
+            </td>
+            <td>
+                <input type="text" name="mail" placeholder="메일 형식에 맞춰주세요."/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                비밀번호
+            </td>               
+            <td>
+                <input type="password" name="pw" placeholder="영어,숫자,특수문자 포함 4글자 이상" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                비밀번호
+            </td>
+            <td>
+                <input type="password" name="pwchk" placeholder="비밀번호를 다시 한번 입력" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="회원가입" />
+                <input type="reset" value="취소" />
+                <input type="button" value="로그인" onclick="location.href='01_Number객체.html'" />
+            </td>
+        </tr>
+    </table>  
+</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // int primitiveNumber = 273;
+        // primitiveNumber.toString() 불가
+        // Integer objectNumber = new Integer(273);
+        var primitiveNumber = 273; // 객체변수. primitiveNumber = new Number(273);
+        var objectNumber = new Number(273); // 객체변수 ~ 모든 변수는 객체변수
+        document.write('primitiveNumber의 타입은 ' + typeof (primitiveNumber) + '<br>');
+        document.write('objectNumber의 타입은 ' + typeof (objectNumber) + '<br>');
+        // constructor : 생성자 함수
+        document.write('primitiveNumber 생성 시 생성자 : ' + primitiveNumber.constructor + '<br>'); // .constructor -> 생성자 함수
+        document.write('objectNumber 생성 시 생성자 : ' + objectNumber.constructor + '<br>'); // .constructor -> 생성자 함수
+        // Number 객체에 method1 추가
+        Number.prototype.method1 = function () { // 타입이 object라 속성 추가 가능
+            alert('Number타입은 다 써');
+        };
+        primitiveNumber.method1();
+        objectNumber.method1();
+        objectNumber.method2 = function () { // 타입이 object라 속성 추가 가능
+            alert('objectNumber만 써');
+        }
+        objectNumber.method2();
+        primitiveNumber.method2(); // 이건 실행 불가
+
+        primitiveNumber.method3 = function () {
+            alert('되나보자');
+        }
+        primitiveNumber.method3(); // primitiveNumber는 타입이 object가 아니라서 속성 추가가 불가능
+    </script>
+</head>
+<body>
+
+</body>
+</html>

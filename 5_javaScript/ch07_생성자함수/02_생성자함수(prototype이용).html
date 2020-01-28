@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Student(name, kor, mat, eng, sci) { // 생성자 함수
+            this.name = name;
+            this.kor = kor;
+            this.mat = mat;
+            this.eng = eng;
+            this.sci = sci;           
+        }
+        Student.prototype.getSum = function () {
+            return this.kor + this.mat + this.eng + this.sci;
+        };
+        Student.prototype.getAvg = function () {
+            return this.getSum() / 4;
+        };
+        Student.prototype.toString = function () {
+            var output = ''; // 초기화
+                    for (var key in this) {
+                        if (key != 'getSum' && key != 'getAvg' && key != 'toString') {
+                            output += key + ' : ' + this[key] + '<br>';
+                        } else if (key == 'getSum') {
+                            output += '총점 : ' + this.getSum() + '<br>';
+                        } else if (key == 'getAvg') {
+                            output += '평균 : ' + this.getAvg() + '<br>';
+                        }//if
+                    }//for
+                    return output;
+        };
+        var students = [];
+        students.push(new Student('홍길동', 100, 100, 100, 100));
+        students.push(new Student('김길동', 95, 100, 90, 80));
+        students.push(new Student('박길동', 80, 100, 85, 90));
+        students.forEach(function (data) {
+            document.write(data + '<hr>');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

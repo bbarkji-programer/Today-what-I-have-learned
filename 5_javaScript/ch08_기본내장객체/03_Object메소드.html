@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var obj = { // 모든 객체는 내장 객체인 Object로 상속
+            property: 273
+        };
+        var output = '';
+        output += "hasOwnProperty('property') : " + obj.hasOwnProperty('property') + '<br>'; // .hasOwnProperty -> 해당 속성을 가지면 true
+        output += "hasOwnProperty('name') : " + obj.hasOwnProperty('name') + '<br>'; // .hasOwnProperty -> 해당 속성을 갖지 않으면 false
+        output += obj.toString();
+        document.write(output);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

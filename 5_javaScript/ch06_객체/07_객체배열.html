@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var students = [];
+        students.push({
+            name: '홍길동',
+            kor: 97,
+            mat: 100,
+            eng: 99,
+            sci: 100
+        });
+        students.push({
+            name: '김길동',
+            kor: 97,
+            mat: 95,
+            eng: 99,
+            sci: 100
+                });
+        students.push({
+            name: '박길동',
+            kor: 97,
+            mat: 100,
+            eng: 99,
+            sci: 90
+        });
+        for (var idx in students) {
+            students[idx].getSum = function(){ // students의 각 idx 에 모두 getSum을 추가
+                return this.kor + this.mat + this.eng + this.sci;
+            };
+            students[idx].getAvg = function () {
+                return this.getSum() / 4;
+            };
+            students[idx].toString = function () {
+                return '이름 : ' + this.name + '(총점 : ' + this.getSum() + ', 평균 : ' + this.getAvg() + ')<br>'
+            };
+        }
+        students.forEach(function (data) {
+            document.write(data);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
