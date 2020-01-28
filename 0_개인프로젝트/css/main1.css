@@ -2,6 +2,7 @@
 *{
     margin:0;
     padding:0;
+    font-family:'Bauhaus 93';
 }
 a{
     text-decoration:none;
@@ -13,18 +14,24 @@ li{
 img{
     border:0;
 }
+h1, p{
+    font-family:Arial, Helvetica, sans-serif;
+}
 
 /* header */
 header{
-    height:180px;
-    line-height:180px;
+    height:200px;
+    line-height:200px;
     text-align:center;
+    position:relative;
 }
 
 /* header의 #header_fixed */
 header #header_fixed{
     height:40px;
-    position:relative;
+    position:fixed;
+    top:0;
+    width:100%;
 }
 
 /* header의 menu */
@@ -36,22 +43,23 @@ header #header_fixed .menu img{
 
 /* header의 .search */
 header #header_fixed .search{
-    width:250px;
-    height:30px;
-}
-header #header_fixed .search input[type=text]{
     width:200px;
     height:30px;
-    border:1px solid lightgrey;
-    box-sizing:border-box;
-    outline:none;
-    position:absolute;
-    left:50px;
-    top:5px;
-    padding:10px;
-    border-radius:20px;
-    font-size:1.1em;
-    color:grey;
+}
+header #header_fixed .search input[type=text] {
+    width: 160px;
+    height: 30px;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    outline: none;
+    position: absolute;
+    left: 50px;
+    top: 5px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.1em;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 header #header_fixed .search input[type=submit]{
     width:30px;
@@ -60,7 +68,7 @@ header #header_fixed .search input[type=submit]{
     border:0;
     outline:none;
     position:absolute;
-    left:260px;
+    left:220px;
     top:5px;
 }
 
@@ -72,7 +80,6 @@ header #header_fixed .btn_sub{
     border:0;
     outline:0;
     font-size:1.5em;
-    font-family:'Bauhaus 93';
     position:absolute;
     right:120px;
     top:0px;
@@ -84,7 +91,6 @@ header #header_fixed .btn_log {
     border: 0;
     outline: 0;
     font-size: 1.5em;
-    font-family: 'Bauhaus 93';
     position:absolute;
     right:10px;
     top:0px;
@@ -92,28 +98,36 @@ header #header_fixed .btn_log {
 
 /* #gnb */
 #gnb {
+    height: 1720px;
     display: none;
     position: absolute;
     top: 40px;
     left: 0;
-    border-right: 1px solid lightgrey;
-    border-bottom: 1px solid lightgrey;
+    border-right: 1px solid #F2F2F2;
+    border-bottom: 1px solid #F2F2F2;
+    z-index: 9999;
 }
 #gnb ul{
     background-color:white;
     height:100%;
-    width:200px;
-    box-shadow: -10px 10px 20px 1px grey;
+    width:250px;
+    box-shadow: -10px 20px 20px 1px grey;
 }
 #gnb ul li {
     height: 100px;
     line-height: 100px;
     text-align: center;
-    font-family: 'Bauhaus 93';
-    font-size:1.3em;
+    font-size:1.5em;
+}
+#gnb ul li:hover {
+    background-color:black;
+    color:white;
 }
 #gnb ul li a{
     display:block;
+}
+#gnb ul li a:hover {
+    color: white;
 }
 
 /* #toggle */
@@ -125,13 +139,19 @@ header #header_fixed .btn_log {
 }
 
 /* header의 a.logo */
-header a.logo img {
-    height: 120px;
+header a.logo{
+    font-size:4.0em;
+    font-weight:bold;
+    height:150px;
+    line-height:150px;
+    text-align:center;
+    z-index:-9999;
 }
 
 /* #lnb */
 #lnb ul{
     overflow:hidden;
+    margin:0 0 10px 0;
 }
 #lnb ul li{
     float:left;
@@ -139,24 +159,83 @@ header a.logo img {
     height:50px;
     line-height:50px;
     text-align:center;
-    border-top: 1px solid lightgrey;
+    border-top: 1px dashed grey;
     border-bottom: 1px solid black;
     box-sizing:border-box;
-    font-family:'Bauhaus 93';
-    font-size:1.3em;
+    font-size:1.5em;
+}
+#lnb ul li a{
+    display:block;
+}
+#lnb ul li:hover{
+    background-color:black;
+    color:white;
+}
+#lnb ul li a:hover{
+    color:white;
 }
 
 /* section */
-/* #content_left */
-#content_left{
+section {
+    margin: 0 auto;
+    width: 1000px;
+    height: 1400px;
     position:relative;
 }
-#content_left .video iframe{
-    width:1000px;
-    height:755px;
-    border:0;
-    position:absolute;
-    top:10px;
-    left:10px;
-    margin-bottom:20px;
+
+/* #video */
+    section #video {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed grey;
+    }
+
+/* #news */
+    section #news {
+        position: absolute;
+        top: 580px;
+        padding: 10px;
+        overflow: hidden;
+        width: 600px;
+        height: 820px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-right: 1px dashed grey;
+        box-sizing: border-box;
+    }
+        section #news div:nth-child(1) {
+            padding-bottom: 10px;
+            border-bottom: 1px dashed grey;
+            box-sizing: border-box;
+        }
+section #news div:nth-child(1) img{
+    width:300px;
+    float: left;
+    margin: 10px 10px 5px 10px;
 }
+section #news div:nth-child(2) {
+    padding : 10px 0 10px 0;
+}
+section #news div:nth-child(2) h1 {
+    padding-bottom: 10px;
+}
+section #news div:nth-child(2) img {
+    width: 300px;
+    float: right;
+    margin: 0px 10px 5px 10px;
+}
+/* footer */
+footer {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border-top: 1px dashed grey;
+}
+
+footer #last p{
+    font-family:'Bauhaus 93';
+
+}
+
