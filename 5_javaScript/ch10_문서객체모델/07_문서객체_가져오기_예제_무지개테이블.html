@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table{
+            margin:0 auto;
+        }
+        td{
+            padding:1px;
+            width:50px;
+            height:100px;
+        }
+        td:nth-child(1){
+            background-color:red;
+        }
+        td:nth-child(2){
+            background-color:orange;
+        }
+        td:nth-child(3){
+            background-color:yellow;
+        }
+        td:nth-child(4){
+            background-color:green;
+        }
+        td:nth-child(5){
+            background-color:blue;
+        }
+        td:nth-child(6){
+            background-color:navy;
+        }
+        td:nth-child(7){
+            background-color:violet;
+        }
+    </style>
+    <script>
+        var color = ['white', 'red', 'orange', 'yellow', 'green', 'blue', 'navy', 'violet'];
+        function change(idx) {
+            document.body.style.backgroundColor = color[idx];
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr onmouseout="return change(0)">
+            <td onmouseover="return change(1)">
+            </td>
+            <td onmouseover="return change(2)">
+            </td>
+            <td onmouseover="return change(3)">
+            </td>
+            <td onmouseover="return change(4)">
+            </td>
+            <td onmouseover="return change(5)">
+            </td>
+            <td onmouseover="return change(6)">
+            </td>
+            <td onmouseover="return change(7)">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

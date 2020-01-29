@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        var today = new Date(); // 현재의 날짜,시간
+        var limitDay = new Date();
+
+        // Date 객체의 toString()메소드
+        document.write('기본 : '+ today+'<br>'); // 기본
+        document.write('날짜시간 : ' + today.toLocaleString()+'<br>');
+        document.write('날짜만 : ' + today.toLocaleDateString() + '<br>');
+        document.write('시간만 : ' + today.toLocaleTimeString() + '<br>');
+        limitDay.setDate(today.getDate() + 14); // 현재 +14일로 today를 새로 셋팅(Date형 숫자연산 가능)
+        document.write('2주 후의 시점 : ' + limitDay.toLocaleString() + '<br>');
+                
+    </script>
+</head>
+<body>
+
+</body>
+</html>

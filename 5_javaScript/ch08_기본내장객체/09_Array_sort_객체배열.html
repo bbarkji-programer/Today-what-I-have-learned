@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //생성자함수 만들기
+        function Student(name, kor, eng, mat) {
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.mat = mat;
+        }
+        // 프로토타입 함수 만들기
+        // (* 반드시 생성자 함수를 먼저 만들어야 생성가능) : 공통 영역(메모리 절약목적)
+        Student.prototype.getSum = function () {
+            return this.kor + this.eng + this.mat;
+        };
+        Student.prototype.toString = function () {
+            var output = ' ' + this.name + '(' + this.kor + ' ' + this.eng + ' ' + this.mat + ' ' + this.getSum() + ')';
+            return output;
+        };
+        // 객체 배열 만들기
+        var students = [new Student('홍길동', 90, 100, 100),
+                        new Student('김길동', 100, 95, 80),
+                        new Student('최길동', 90, 100, 85)];
+        // 정렬하기
+        document.write('정렬 전 : ' + students + '<br>'); // 정렬 전
+        students.sort(function (left, right) {
+            return right.getSum() - left.getSum(); // 총점순으로 내림차순 정렬
+        }); 
+        document.write('총점 순 정렬 후 : ' + students + '<br>');
+        students.sort(function (left, right) {
+            return right.kor - left.kor; // kor 순으로 내림차순 정렬ㄹ
+        });
+        document.write('kor 순 정렬 후 : ' + students+'<br>');
+        // 슬라이스(원하는 순서까지만)
+        var s = students.slice(0, 2) // 0번 인덱스부터 2인덱스 앞까지 (0번째, 1번째)
+        document.write('슬라이스 후 : ' + s); 
+    </script>
+</head>
+<body>
+
+</body>
+</html>

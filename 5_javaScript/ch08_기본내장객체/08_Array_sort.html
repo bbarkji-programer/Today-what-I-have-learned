@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var arr1 = new Array('hij', 'abc', 'zzz'); //문자배열
+        var arr2 = [52, 273, 103, 57, 32]; // 숫자배열
+
+        document.write('정렬 전의 arr1 : ' + arr1 + '<br>');
+        arr1.sort(); // 알파벳 숫서대로 정렬
+        document.write('정렬 후의 arr1 : ' + arr1 + '<br>');
+
+        document.write('정렬 전의 arr2 : ' + arr2 + '<br>');
+        arr2.sort(); // 숫자를 그냥 sort 하면, 맨 첫 숫자만 차례로 정렬됨(첫 숫자가 같으면 두 번째 숫자)..
+        document.write('정렬 후의 arr2 : ' + arr2 + '<br>'); 
+
+        document.write('정렬 전의 arr2 : ' + arr2 + '<br>');
+        arr2.sort(function (left, right) { // 숫자를 sort 하려면, 콜백함수 이용필요
+            // return left - right; // 오름차순 정렬
+            return right - left; // 내림차순 정렬
+        }); 
+        document.write('정렬 후의 arr2 : ' + arr2 + '<br>'); 
+    </script>
+</head>
+<body>
+
+</body>
+</html>

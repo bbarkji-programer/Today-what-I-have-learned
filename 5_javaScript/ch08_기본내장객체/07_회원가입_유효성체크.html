@@ -32,14 +32,14 @@
             padding:10px 0;
         }
     </style>
-    <script>
+    <script> 
         function chk() {
 
             var patternSpe = /[@!#$%^&*()-_=+\<>'"]/;
             var patternEng = /[a-zA-Z]/;
             var patternNum = /[0-9]/;
 
-            if (frm.mail.value.indexOf('@') == -1
+            if (frm.mail.value == '' 
                 || frm.mail.value.indexOf('@') <= 0
                 || frm.mail.value.indexOf('@') >= frm.mail.value.length - 1
                 || frm.mail.value.indexOf('@') != frm.mail.value.lastIndexOf('@')) {

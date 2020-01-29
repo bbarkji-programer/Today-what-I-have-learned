@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var child = open('http://www.naver.com', 'naver', 'width=450, height=500, left=500px, top=200px');
+        /* window.open('속성1', '속성2', '속성3');
+         * 속성1 : url
+         * 속성2 : 윈도우(새 창) 이름
+         * 속성3 : width, height, 
+         *         location(1,0 / yes,no), 
+         *         menubar(1,0 / yes, no), 
+         *         resiable, 
+         *         scrollbar(1,0),
+         *         left(x좌표), top(y좌표)
+         */
+        if (child) {
+            child.document.write('<h1> 새 창 열렸다. </h1>');
+        } else {
+            child.document.write('팝업 차단을 해지하세여~');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

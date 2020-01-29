@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onload = function () {
+            // .header 첫 번 째 하나 가져옴(배열로 처리 X)
+            var header1 = document.querySelector('.header'); 
+            // .header 다 가져옴(배열로 처리 O)
+            var headers = document.querySelectorAll('.header'); 
+            header1.innerHTML = '바꿔';
+            for (var idx in headers) {
+                //headers[idx].style.color = 'red';
+                //headers[idx].style.backgroundColor = 'aqua';
+                headers[idx].style.cssText = 'color:red; background-color:yellow;'
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1 class="header"> HEADER </h1>
+    <h1 class="header"> HEADER </h1>
+</body>
+</html>

@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="interval.js"></script>
+    <script>
+        var today = new Date(); // 지금 이 시점
+        var before = new Date(2020, 0, 1, 10, 0, 0); // 2020년 1월 1일 오전 10시(*컴퓨터는 0월부터 시작(0월=1월))
+        var intervalDay = today.getInterval(before);
+        document.write(before.toLocaleDateString() + '부터 ' + today.toLocaleDateString() + '까지 ' + intervalDay + '일 지났네');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

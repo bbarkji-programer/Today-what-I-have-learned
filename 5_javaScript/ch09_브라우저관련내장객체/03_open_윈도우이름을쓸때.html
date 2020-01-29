@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function openWindow() {
+            var child = open('http://www.naver.com', 'childWin', 'width=300, height=400');
+            if (!child) {
+                alert('팝업 차단을 해제하세여~');
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- <form action="#">
+        <input type="button"
+               value="버튼" />
+    </form> -->
+    <button onclick="return openWindow()">새 창 열기 버튼</button>
+    <hr />
+    <a href="http://www.daum.net" target="childWin">새 창을 Daum으로 가기</a>
+</body>
+</html>

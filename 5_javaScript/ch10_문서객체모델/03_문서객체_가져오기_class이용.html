@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        input{
+            font-size:30px;
+            font-weight:bold;
+            width:560px;
+        }
+    </style>
+    <script>
+        var color = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'purple'];
+        var cnt = 0;
+
+        window.onload = function () { // window가 onload 될 때 이 function(){} 을 실행한다.
+            var clock = document.getElementsByClassName('clock'); // clock 배열로 (2개 이상 일 수 있으니)
+            clock[0].innerHTML = '날짜 : ' + new Date().toDateString(); // clock[0] = 첫 번째 clock class = h 태그
+            clock[1].value = '시간 : ' + new Date().toTimeString();  // input 태그는 innerHTML 할 곳이 없음. 화면에 뿌리려면 value에
+            setInterval(function () {
+                clock[1].value = '시간 : ' + new Date().toTimeString(); 
+                clock[1].style.color = color[cnt % 7];
+                cnt++;
+            }, 1000); // 1초마다 시간이 바뀌도록
+        }
+    </script>
+</head>
+<body>
+    <h1 class="clock"></h1>
+    <input type="text" 
+           class="clock" />
+</body>
+</html>
