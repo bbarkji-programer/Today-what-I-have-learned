@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onload = function () {
+            document.getElementById('myForm').onsubmit = function () {
+                var pw = document.getElementById('pw');
+                var pwChk = document.getElementById('pwChk');
+                if (pw.value != pwChk.value) {
+                    alert('비밀번호가 일치하지 않습니다.');
+                    pw.value = '';
+                    pwChk.value = '';
+                    pw.focus();
+                    return false; // 디폴트 이벤트 '제한'
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <form action="#" id="myForm">
+        <p>아이디 <input type="text" name="id" id="id" /></p>
+        <p>비밀번호 <input type="password" name="pw" id="pw" /></p>
+        <p>비밀번호 확인<input type="password" name="pwChk" id="pwChk" /> </p>
+        <p><input type="submit" /></p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function childOpen() {
+            var child = window.open('10.confirm.html', '', 'width=300, height=200, top=100, left=100');
+            if (!child) {
+                alert('팝업 차단 해제해주세영');
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="#">
+        아이디 <input type="text" id="id" />
+        <input type="button" onclick="childOpen()" value="중복확인">
+    </form>
+</body>
+</html>

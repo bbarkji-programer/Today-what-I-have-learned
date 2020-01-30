@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onkeyup = function () {
+            alert(event.keyCode);
+        };
+        window.onclick = function () {
+            var p = document.getElementsByTagName('p')[0];
+            p.innerHTML = 'screen 좌표값 : ' + event.screenX + ', ' + event.screenY + '<br>';
+            p.innerHTML += 'offset 좌표값 : ' + event.offsetX + ', ' + event.offsetY; 
+        };
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>

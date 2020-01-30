@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+            margin:0 auto;
+            width:300px;
+        }
+        #wrap p{
+            text-align:center;
+            font-size:1.1em;
+            padding:5px;
+        }
+        #wrap input, #wrap span{
+            display:inline-block;
+            width:150px;
+            height:20px;
+            border:1px solid pink;
+        }
+        #wrap h2{
+            width:250px;
+            padding:20px 10px;
+            margin:30px 15px;
+            border:1px solid pink;
+            background-color:lightpink;
+            border-radius:10px 40px;
+            text-align:center;
+            cursor:pointer;
+        }
+    </style>
+    <script>
+        function childOpen() {
+            var child = window.open('12_문서객체_예제_인사정보_child.html',
+                                    '',
+                                    'width=500,height=600, left=100, top=100');
+            if (!child) {
+                alert('팝업 차단 해제 부탁여~');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p>
+            사원이름 <input type="text"
+                            id="name" /> <!--child에 넘길목적-->
+        </p>
+        <p>
+            파트명칭 <span id="part"></span>
+        </p>
+        <p>
+            결재일자 <input type="date"
+                            id="date" />
+        </p>
+        <h2 id="insa"
+            onclick="childOpen()">
+            인사정보 List(자원)
+        </h2>
+    </div>
+</body>
+</html>

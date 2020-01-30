@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        span{
+            color:red;
+        }
+    </style>
+    <script>
+        var cnt = 0;
+
+        window.onload = function () {
+            document.getElementById('like').onclick = function () {
+                this.innerHTML += '<span>♥</span>';
+                if (++cnt >= 5) {
+                    like.onclick = null; // 5번 클릭부터는 아무일도 일어나지 않음..
+                }              
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1 id="like">좋아요</h1>
+</body>
+</html>

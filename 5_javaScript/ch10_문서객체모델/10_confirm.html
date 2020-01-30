@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onload = function () {
+            var id = opener.document.getElementById('id').value;
+            var getId = document.getElementById('getId');
+            getId.value = id;
+        };
+        function sendData() {
+            var confirmId = document.getElementById('getId').value;
+            opener.document.getElementById('id').value = confirmId;
+            window.close();
+        }
+    </script>
+</head>
+<body>
+    ID <input type="text" id="getId"/>
+    <button onclick="idChk()">체크</button>
+    <p>
+        <button onclick="sendData()">아이디사용</button>
+    </p>
+</body>
+</html>
