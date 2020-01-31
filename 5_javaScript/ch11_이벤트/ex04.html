@@ -7,13 +7,15 @@
     <script>
 
         var overImg = ['img/0over.jpg', 'img/1over.jpg', 'img/2over.jpg', 'img/3over.jpg'];
+        var outImg = ['img/0out.jpg', 'img/1out.jpg', 'img/2out.jpg', 'img/3out.jpg'];
 
         function over(n) {
-            var img = document.getElementsByTagName('img');
-            img[n] = overImg[n];
-        };
+            var imgOver = document.getElementsByTagName('img');
+            imgOver[n].src = overImg[n];
+        }
         function out(n) {
-
+            var imgOut = document.getElementsByTagName('img');
+            imgOut[n].src = outImg[n];
         }
     </script>
 </head>

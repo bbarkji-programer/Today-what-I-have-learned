@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+            position:absolute;
+            left:0;
+            top:0;
+            text-align:center;
+        }
+        img {
+            display: none;
+        }
+
+    </style>
+    <script>
+        window.onclick = function () {
+
+            var wrap = document.getElementById('wrap'); // 이건 배열 아님
+            var p = document.getElementsByTagName('p')[0]; // 이건 배열임
+            var img = document.getElementsByTagName('img')[0];
+
+            p.innerHTML = 'screen 좌표값 : ' + event.screenX + ', ' + event.screenY + '<br>';
+            p.innerHTML += 'offset 좌표값 : ' + event.offsetX + ', ' + event.offsetY;
+
+            img.style.display = 'inline'; // 원래 img 속성이 inline;
+
+            wrap.style.left = event.offsetX + 'px';
+            wrap.style.top = event.offsetY + 'px';
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p></p>
+        <img src="img/car.gif" />
+    </div>
+</body>
+</html>
