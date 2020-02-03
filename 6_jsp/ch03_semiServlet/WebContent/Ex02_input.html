@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<link href="/ch03_semiServlet/css/ex03.css" rel="stylesheet">
+<script>
+	window.onload = function(){
+		document.getElementByID('frm').onsubmit = function(){
+			var num = document.getElementsByName('num')[0];
+			var su = Numver(num.value)
+			if(isNaN(su) || su <= 0 || num.value.indexOf('.')!=-1){ 
+				alert("0보다 큰 자연수만 입력하세요.");
+				num.value='';
+				num.focus();
+				return false;
+			}
+		};
+	};
+</script>
+<body>
+	<h2>1부터 얼마까지 누적합을 구할까요? 자연수를 입력하세요.</h2>
+	<form action="Ex02" method="get" id="frm">
+		<input type="text" name="num">
+		<input type="submit" value="누적결과">
+	</form>
+</body>
+</html>

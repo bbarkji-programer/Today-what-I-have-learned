@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="../Ex01?id=aaa&pw=ppp">Ex01 서블릿에게 id와 pw 넘기기(get방식)</a>
+	<hr>
+	<button onclick="location.href='../Ex01?id=i&pw=p'">Ex01 서블릿에게 id와 pw 넘기기(get방식)</button>
+	<hr>
+	<form action="../Ex01" method="get">
+		<p> ID <input type="text" name="id"></p>
+		<p> PW <input type="password" name="pw"></p>
+		<p><input type="submit" value="Ex01 서블릿에게 id와 pw 넘기기(get방식)"></p>
+	</form>
+	<hr>
+	<form action="/ch04_servlet/Ex01" method="post">
+		<p> ID <input type="text" name="id"></p>
+		<p> PW <input type="password" name="pw"></p>
+		<p><input type="submit" value="Ex01 서블릿에게 id와 pw 넘기기(post방식)"></p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+	window.onload = function(){
+		frm.onsubmit = function chk(){
+			var su = document.getElementsByName('su')[0];
+			var num = Number(su.value);
+			if(isNaN(num) || num <=0 || su.value.indexOf('.')!=-1){
+				alert("자연수만 입력하세요.");
+				su.value('');
+				su.focus();
+				return false;
+			}
+		};
+	};
+</script>
+<body>
+	<fieldset>
+	<legend>1부터 누적합을 구하고 싶은 최종 수 입력</legend>
+	<form action="/ch04_servlet/Exam03" method="get" onsubmit="return chk()" id="frm">
+		<input type="text" name="su">
+		<input type="submit" value="누적결과">
+	</form>
+	</fieldset>
+</body>
+</html>
