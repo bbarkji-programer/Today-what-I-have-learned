@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+	window.onload = function(){
+		document.getElementById("form1").onsubmit = function(){
+			var color1 = document.getElementsByClassName('color1');
+			var checkedCnt = 0;
+			for(var i=0; i<color1.length; i++){
+				checkedCnt += color1[i].checked
+			}
+			if(!checkedCnt){
+				alert("색깔 한 가지는 반드시 선택해주세요~");
+				return false;
+			}
+		};
+		document.getElementById("form2").onsubmit = function(){
+			var color2 = document.getElementsByClassName('color2');
+			var checkedCnt = 0;
+			for(var i=0; i<color2.length; i++){
+				checkedCnt += color2[i].checked
+			}
+			if(!checkedCnt){
+				alert("색깔 한 가지는 반드시 선택해주세요~");
+				return false;
+			}
+		};
+	};
+</script>
+<body>
+	<fieldset>
+		<legend>배경색을 선택하세요(Get방식)</legend>
+		<form action="/ch04_servlet/Exam05" method="get" id="form1">
+			<input type="radio" class=color1 name=color value="0">빨강
+			<input type="radio" class=color1 name=color value="1">주황
+			<input type="radio" class=color1 name=color value="2">노랑
+			<input type="radio" class=color1 name=color value="3">초록
+			<input type="radio" class=color1 name=color value="4">파랑
+			<input type="radio" class=color1 name=color value="5">남색
+			<input type="radio" class=color1 name=color value="6">보라
+			<input type="submit" value="선택확인">			
+		</form>
+	</fieldset>
+		<fieldset>
+		<legend>배경색을 선택하세요(Post방식)</legend>
+		<form action="/ch04_servlet/Exam05" method="post" id="form2">
+			<input type="radio" class=color2 name=color value="0">빨강
+			<input type="radio" class=color2 name=color value="1">주황
+			<input type="radio" class=color2 name=color value="2">노랑
+			<input type="radio" class=color2 name=color value="3">초록
+			<input type="radio" class=color2 name=color value="4">파랑
+			<input type="radio" class=color2 name=color value="5">남색
+			<input type="radio" class=color2 name=color value="6">보라
+			<input type="submit" value="선택확인">			
+		</form>
+	</fieldset>
+</body>
+</html>

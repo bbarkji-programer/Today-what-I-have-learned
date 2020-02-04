@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/ch04_servlet/css/Exam08.css" rel="stylesheet">
+</head>
+<body>
+	<form action="/ch04_servlet/Exam08" method="post"> <!-- get 방식은 글자 수 제한이 있으므로 -->
+		<table>
+			<caption>게시판</caption>
+			<tr>
+				<th>
+					제목
+				</th>
+				<td>
+					<input type="text" name="title" autofocus="autofocus" size="28">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					작성자
+				</th>
+				<td>
+					<input type="text" name="writer" size="28">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					내용
+				</th>
+				<td>
+					<textarea rows="10" cols="30" name="content"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="저장">
+					<input type="reset" value="초기화">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

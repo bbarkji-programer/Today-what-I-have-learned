@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+#joinForm_wrap{
+	width:450px;
+	border:2px solid orange;
+	padding: 20px;
+}
+
+#join_title{
+	text-align:center;
+	font-size:1.5em;
+	font-weight:bold;
+	color:orange;
+	padding-bottom:20px;
+}
+hr{
+	border:1px solid orange;
+}
+.name, .id, .pw, .pwChk, .birth, .email, .mailSend{
+	width:300px;
+	border:1px solid orange;
+	padding:2px;
+}
+th{
+	text-align:left;
+	width:120px;
+	padding-left:10px;
+	font-size:0.9em;
+}
+tr,td{
+	text-align:center;
+	height:40px;
+}
+
+.joinBtn_style{
+	width:100px;
+	height:30px;
+	text-align:center;
+	margin: 10px 0;
+	background-color:orange;
+	color:white;
+	border:none;
+	outline:none;
+	font-weight:bold;
+}

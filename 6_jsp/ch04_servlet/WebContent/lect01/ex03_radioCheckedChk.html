@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+	window.onload = function(){
+		document.getElementsByTagName('form')[0].onsubmit = function(){
+			var agreeYes = document.getElementsByName('agree')[0];
+			if(!agreeYes.checked){
+				alert('동의하셔야 진행 가능합니다.');
+				return false;
+			}
+		};
+	};
+</script>
+<body>
+	<fieldset>
+		코로나 바이러스 발생자 및 의심자는 집에서 쉬어 주세요.
+	</fieldset>
+	<form action="#">
+		<input type="radio" name="agree" value="yes">동의합니다.
+		<input type="radio" name="agree" value="no" checked="checked">동의하지 않습니다.
+		<input type="submit">
+	</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+	// 반드시 한 가지는 선택되게 하는 로직
+	window.onload = function(){
+		document.getElementsByTagName('form')[0].onsubmit = function(){
+			var opt = document.getElementsByClassName('opt');
+			var optSelectedCnt = 0;
+			for(var i=0; i<opt.length; i++){
+				if(opt[i].selected){ // 선택된 옵션=1, 선택 안된 옵션=0
+					optSelectedCnt++;
+				}
+			}
+			if(!optSelectedCnt){ // 값이 0이면 false. 따라서 선택이 안된 경우 optSelectedCnt=false가 되고, !optSelectedCnt 로 true로 만들어서 if문으로 넘어가도록.
+				alert('한 개 이상은 선택 하셔야 합니다.');
+				return false;
+			}
+		};
+	};
+</script>
+<body>
+	<h2>2~9단까지 하나는 선택</h2>
+	<form action="#">
+		<select name="su" multiple="multiple" size="5" >
+		<option class="opt">2단</option>
+		<option class="opt">3단</option>
+		<option class="opt">4단</option>
+		<option class="opt">5단</option>
+		<option class="opt">6단</option>
+		</select>
+		<input type="submit">
+	</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+	window.onload = function(){
+		document.getElementsByTagName('form')[0].onsubmit = function(){
+			
+		var hobby = document.getElementsByName('hobby');
+		var checkedCnt = 0;
+		
+			for(var i=0; i<hobby.length; i++ ){
+				checkedCnt += hobby[i].checked; // 체크하면, hobby[1].checked=1, 체크 안하면, hobby[i].checked=0
+			}
+			if(!checkedCnt){ // checkedCnt=0 이면,
+				alert('취미를 하나 이상 선택해야 합니다.');
+				return false;
+			}
+		};
+	};
+</script>
+<body>
+	<form action="#">
+		<p>취미
+			 <input type="checkbox" name="hobby" value="독서">독서
+			 <input type="checkbox" name="hobby" value="독서">등산
+			 <input type="checkbox" name="hobby" value="독서">요리
+			 <input type="checkbox" name="hobby" value="독서">목공
+			 <input type="checkbox" name="hobby" value="독서">산책
+		</p>
+		<p>
+			<input type="submit">
+		</p>
+	</form>
+</body>
+</html>
