@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	td{ 
+		text-align:center; 
+		padding:5px;
+	}
+</style>
+</head>
+<body>
+	<h2>한 줄 메모</h2>
+	<form action="ex02_memoPro.jsp" method="post"> <!-- get 방식은 255자 이상 안넘어감 -->
+	<table>
+		<tr>
+			<th>작성자</th>
+			<td><input type="text" name="writer"></td>
+		</tr>
+		<tr>
+			<th>한줄메모</th>
+			<td><input type="text" name="memo"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="메모작성"></td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>
