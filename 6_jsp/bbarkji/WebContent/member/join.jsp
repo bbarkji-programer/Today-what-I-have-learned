@@ -11,6 +11,14 @@
 <script>
 	window.onload = function(){
 		document.getElementById("chk").onsubmit = function(){
+			// 이름 입력해야
+			var name = document.getElementsByClassName("name")[0].value;
+			if(!name){
+				alert("이름을 입력하세요.");
+				chk.name.value="";
+				chk.name.focus();
+				return false;
+			}
 			// 아이디는 4글자 이상
 			var id = document.getElementsByClassName("id")[0].value;
 			if(id.length<4){
@@ -22,6 +30,18 @@
 			// 비밀번호 일치해야
 			var pw = document.getElementsByClassName("pw")[0].value;
 			var pwChk = document.getElementsByClassName("pwChk")[0].value;
+			if(!pw){
+				alert("비밀번호를 입력하세요.");
+				chk.pw.value="";
+				chk.pw.focus();
+				return false;
+			}
+			if(!pwChk){
+				alert("비밀번호 확인을 해주세요.")
+				chk.pwChk.value="";
+				chk.pwChk.focus();
+				return false;
+			}
 			if(pw!=pwChk){
 				alert("비밀번호가 일치하지 않습니다.");
 				chk.pw.value="";
@@ -56,12 +76,11 @@
 <div id="joinForm_wrap">
 <form action="joinPro.jsp" method="post" id="chk">
 <div id="join_title">회원가입</div>
-<hr>
 <input type="hidden" name="hiddenParam" value="xx">
 	<table>	
 		<tr>
 			<th>이름</th>
-			<td><input type="text" name="name" class="name" required="required"></td>
+			<td><input type="text" name="name" class="name"></td>
 		</tr>
 		<tr>
 			<th>아이디</th>
@@ -123,6 +142,6 @@
 	</table>
 </form>
 </div>
-<%@include file="footer.jsp" %>
+<%@include file="/common/footer.jsp" %>
 </body>
 </html>

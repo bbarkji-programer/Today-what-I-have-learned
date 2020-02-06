@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% String conPath = request.getContextPath(); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		response.sendRedirect("member/login.jsp");
-	%>
+	<h1>ex04 파일입니다.</h1>
+	<jsp:forward page="ex05.jsp">
+		<jsp:param value="hong" name="id"/>
+		<jsp:param value="1111" name="pw"/>
+	</jsp:forward>
 </body>
 </html>

@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		response.sendRedirect("member/login.jsp");
-	%>
+	<h1>ex02_forward.jsp 파일입니다.</h1>
+	<%String n = request.getParameter("n"); %>
+	<h3>n = <%=n %></h3>
 </body>
 </html>

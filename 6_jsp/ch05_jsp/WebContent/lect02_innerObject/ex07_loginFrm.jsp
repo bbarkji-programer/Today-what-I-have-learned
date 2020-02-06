@@ -8,10 +8,20 @@
 <title>Insert title here</title>
 <link href="<%=conPath %>/css/login.css" rel="stylesheet">
 </head>
+
+<%
+	String msg = request.getParameter("msg");
+	if(msg!=null){
+%>
+<script>
+	alert('아이디와 비번을 확인하세요.');
+</script>
+<%} %>
 <body>
 	<h1>로그인 화면</h1>
 	<hr>
-	<form action=" " method="post">
+	<form action="loginCertification02.jsp" method="get">
+	<!-- <form action="loginCertification.jsp" method="get"> -->
 		<table>
 			<tr>
 				<th>아이디</th>
@@ -27,8 +37,9 @@
 		</table>
 	</form>
 	<div id="msg">
-	<% String msg = request.getParameter("msg"); %>
-	<h2><%=msg %></h2>
+	<%-- <% String msg = request.getParameter("msg"); %> --%>
+	<%-- <h2><%if(msg!=null) out.print(msg); %></h2> --%>
+	<h2><%if(msg!=null) out.print("비밀번호와 아이디를 확인하세여"); %></h2>
 	</div>
 </body>
 </html>
