@@ -10,7 +10,7 @@
 <body>
 <%
 	Cookie cookie = new Cookie("cookieName","cookieValue"); //쿠키생성
-	cookie.setMaxAge(60*60); //1시간 유효한 쿠키 (-1)로 하면 브라우저를 닫을 때까지 유효
+	cookie.setMaxAge(60*60); //쿠키설정 - 1시간 유효한 쿠키 (-1)로 하면 브라우저를 닫을 때까지 유효
 	response.addCookie(cookie); // response에 탑재
 %>
 	<h2>지금 막 구운 쿠키 이름: <%=cookie.getName() %></h2>
