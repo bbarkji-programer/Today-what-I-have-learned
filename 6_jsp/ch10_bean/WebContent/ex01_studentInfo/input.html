@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>학생 정보 입력</h2>
+	<!-- <form action="step4.jsp"> -->
+	<form action="step4.jsp">
+		<p>
+			학번
+			<input type="text" name="studentNum" required="required">
+		</p>
+		<p>
+			이름
+			<input type="text" name="name" required="required">
+		</p>
+		<p>
+			학년
+			<input type="number" name="grade" required="required">
+		</p>
+		<p>
+			반이름
+			<input type="radio" name="className" value="A" checked="checked">A반
+			<input type="radio" name="className" value="B">B반
+		</p>
+		<p>
+			점수
+			<input type="number" name="score">
+		</p>	
+		<p> <input type="submit" value="입력"></p>
+	</form>
+</body>
+</html>

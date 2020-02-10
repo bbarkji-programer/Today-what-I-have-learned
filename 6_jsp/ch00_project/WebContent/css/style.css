@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+/* 공통설정 - 줄바꿈 설정 */
+div, th, td, li, p{
+	word-break: break-all;
+}
+
+/* 공통설정 - 큰 덩어리 설정 */
+*, *:after, *:before{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* 공통설정 - 블럭 */
+div{
+	display:block;
+}
+
+/* 공통설정 - 글자 관련 */
+body, input, select, text-area, button{
+	font-family: malgun gothic, AppleGothic, dotum;
+	line-height: 1;
+	letter-spacing: -.05em; /*글자간격*/
+	color: #4c4c4c;
+	font-size: 12px;
+	max-width: 100%;
+}
+
+#header #container, #content{
+	position:relative;
+}
+
+/* header */
+#userMenu{
+	width:1050px;
+	margin: 0 auto;
+}
+#userMenu:after{
+	content:"";
+	dispaly:block;
+	overflow:hidden;
+	width:100%;
+	height: 0;
+	font-size: 0;
+	text-indent: -9999px; /*내어쓰기*/
+}
+#userMenu .list_menu{
+	float:right;
+}
+#userMenu *{
+	font-family: noto sans;
+	font-weight:400;
+	letter-spacing: -.3px;	
+}
+#userMenu .menu:before{
+	content:"";
+	position: absolute;
+	right:11px;
+	top:16px;
+	width: 8px;
+	height: 5px;
+}
+#userMenu .menu:after{
+	content:"";
+	float:right;
+	width:1px;
+	height:13px;
+	margin-top:12px;
+	background-color: #d8d8d8;
+}
+#userMenu .menu_join .link_menu{
+	color:#2B8282;
+}
+#userMenu .none_sub .link_menu{
+	padding-right:10px;
+}
+#userMenu .link_menu {
+	float:left;
+	height:37px;
+	padding: 0 22px 0 10px;
+	line-height:35px;
+	white-space:nowrap;
+}
+
+ol, ul{
+	list-style-type:none;
+}
+ul{
+	display:block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start:0px;
+	margin-inline-end:0px;
+	padding-inline-start: 40px;
+}
+li{
+	display:list-item;
+	text-align: -webkit-match-parent;
+}
+a{
+	background-color:transparent;
+	text-decoration:none;
+}
+a:-webkit-any-link{
+	cursor:pointer;
+}
+
+/* 회원가입 리스트까지 css 적용함*/
+

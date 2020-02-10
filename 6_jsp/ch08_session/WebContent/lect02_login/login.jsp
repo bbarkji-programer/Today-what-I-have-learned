@@ -50,5 +50,6 @@
 			</tr>
 		</table>
 	</form>
+	<jsp:include page="../lect03_join/footer.jsp"/>
 </body>
 </html>

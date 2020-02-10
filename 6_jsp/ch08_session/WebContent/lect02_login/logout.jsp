@@ -9,6 +9,7 @@
 <link href="<%=conPath %>/css/style.css" rel="stylesheet">
 </head>
 <body>
+<jsp:include page="../lect03_join/header.jsp"/>
 <%
 	String name = (String)session.getAttribute("name");
 	if(name!=null){

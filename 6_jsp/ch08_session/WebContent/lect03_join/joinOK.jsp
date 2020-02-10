@@ -44,5 +44,6 @@
 	}
 	response.sendRedirect("result.jsp?msg="+msg); // result.jsp로 보내면서 msg 파라미터 값을 가지고 감. 이때 동의했으면 msg=success, 거부했으면 msg=fail
 %>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

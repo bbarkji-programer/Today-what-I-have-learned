@@ -84,5 +84,6 @@
 			</tr>
 		</table>
 	</form>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

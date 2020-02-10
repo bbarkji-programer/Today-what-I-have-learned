@@ -23,5 +23,6 @@
 		<button onclick="location.href='login.jsp'">로그인</button>
 	<%} %>
 		<button onclick="location.href='sessionTest.jsp'">세션 들여다보기</button>
+		<jsp:include page="../lect03_join/footer.jsp"/>
 </body>
 </html>
