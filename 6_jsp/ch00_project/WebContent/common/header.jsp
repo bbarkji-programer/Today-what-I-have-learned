@@ -6,41 +6,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="<%=conPath %>/css/style.css" rel="stylesheet">
+<link href="<%=conPath %>/css/style1.css" rel="stylesheet">
 </head>
 <body>
 <div id="header">
 	<div id="userMenu">
-		<ul class="list_menu">
-			<li class="menu none_sub menu_join">
+		<ul>
+			<li>
 				<a href="join.jsp" class="link_menu">회원가입</a>
-				::after
 			</li>
-			<li class="menu none_sub">
+			<li>
 				<a href="login.jsp" class="link_menu">로그인</a>
-				::after
 			</li>
-			<li class="menu">
-				::before
+			<li>
 				<a href="고객페이지주소" class="link_menu">고객센터</a>
-				<ul class="sub">
-					<li>
-						<a href="공지사항페이지주소" class="link_menu">공지사항</a>
-					</li>
-					<li>
-						<a href="자주하는질문페이지주소" class="link_menu">자주하는질문</a>
-					</li>
-				</ul>
-				::after
 			</li>
 		</ul>
-		::after
 	</div>
-	<div id="headerLogo" class="wrapper">
-		<h1 class="logo">
+	<div id="headerLogo">
+		<h1>
 			<a href="/">
-				<span id="gnbLogoContainer"></span>
-				<img src="로고이미지주소" alt="로고" style="display: block;">			
+				<img src="로고이미지 주소" alt="로고" style="display: block;">			
 			</a>
 		</h1>
 	</div>

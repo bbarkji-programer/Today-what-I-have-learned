@@ -1,0 +1,25 @@
+DROP TABLE MEMBER CASCADE CONSTRAINTS;
+CREATE TABLE MEMBER(
+    ID VARCHAR2(20) PRIMARY KEY,
+    PW VARCHAR2(20) NOT NULL,
+    NAME VARCHAR2(20) NOT NULL,
+    PHONE1 VARCHAR2(10),
+    PHONE2 VARCHAR2(10),
+    PHONE3 VARCHAR2(10),
+    GENDER VARCHAR2(10)
+);
+-- 회원가입(id, pw, name, phone1, phone2, phone3, gender)
+INSERT INTO MEMBER VALUES ('kkk','111','박지영','010','5091','0108','f');
+
+-- 로그인(id,pw)
+-- 1. id와 pw가 맞는지?
+-- 2. id가 맞으면 그 아이디인 사람의 정보(session에 추가)
+SELECT * FROM MEMBER WHERE ID='aaa'  AND PW='111';
+-- 회원정보수정
+UPDATE MEMBER SET NAME='박지영',PW='111',PHONE1='010', PHONE2='5091', PHONE3='0108', GENDER='f'
+    WHERE ID='aaa';
+COMMIT;
+SELECT*FROM MEMBER;
+
+SELECT*FROM MEMBER WHERE ID='AAA';
+

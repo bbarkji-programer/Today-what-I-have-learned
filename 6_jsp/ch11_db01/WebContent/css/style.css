@@ -13,3 +13,6 @@ td, th { text-align: center; padding: 5px;}
 caption { font-size: 25px; }
 h2 {text-align: cetner; color:red;}
 a {text-decoration: none;}
+#form{
+	text-align:center;
+}

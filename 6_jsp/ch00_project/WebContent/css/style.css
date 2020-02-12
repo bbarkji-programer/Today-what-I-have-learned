@@ -1,32 +1,26 @@
 @charset "UTF-8";
 
-/* 공통설정 - 줄바꿈 설정 */
-div, th, td, li, p{
-	word-break: break-all;
-}
-
-/* 공통설정 - 큰 덩어리 설정 */
 *, *:after, *:before{
+	-webkit-box-sizing:border box;
+	-moz-box-sizing: border box;
 	box-sizing: border-box;
-	margin: 0;
 	padding: 0;
 }
-
-/* 공통설정 - 블럭 */
 div{
 	display:block;
 }
-
-/* 공통설정 - 글자 관련 */
 body, input, select, text-area, button{
 	font-family: malgun gothic, AppleGothic, dotum;
 	line-height: 1;
-	letter-spacing: -.05em; /*글자간격*/
+	letter-spacing: -.05em;
 	color: #4c4c4c;
 	font-size: 12px;
 	max-width: 100%;
 }
-
+body{
+	height:100%;
+	margin: 0;
+}
 #header #container, #content{
 	position:relative;
 }
@@ -36,9 +30,12 @@ body, input, select, text-area, button{
 	width:1050px;
 	margin: 0 auto;
 }
+div, th, td, li, p{
+	word-break: break-all;
+}
 #userMenu:after{
 	content:"";
-	dispaly:block;
+	display:block;
 	overflow:hidden;
 	width:100%;
 	height: 0;
