@@ -34,30 +34,3 @@ UPDATE BOARD SET WRITER = '김지영', SUBJECT = '바꾼 제목', CONTENT = '바꾼 내용'
 DELETE FROM BOARD WHERE NUM=1 AND PW='222' ;
 
 COMMIT;
-
--- paging 처리
--- 1. 조회수 조작
-UPDATE BOARD SET HIT = MOD(NUM,12);
--- 2. TOP-N 구문
-SELECT * FROM BOARD ORDER BY REF DESC; -- 1단계 (listBoard())
-SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD ORDER BY REF DESC) A; -- 2단계
-SELECT * FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD ORDER BY REF DESC) A) 
-    WHERE RN BETWEEN 110 AND 120; -- TOP-N구문 (listBoard(s,e))
-
--- 답변글 처리
--- 300번 원글
-INSERT INTO BOARD (NUM, WRITER, SUBJECT, CONTENT, EMAIL, PW, REF, RE_STEP, RE_LEVEL, IP)
-    VALUES (300, '박지영', '첫 번째 글의 제목', '첫 번째 글의 본문', 'barkji0@naver.com', '111', 300, 0, 0, '192.168.20.41');
--- 300번 글에 대한 답변글    
--- ⓐ 스텝
-UPDATE BOARD SET RE_STEP = RE_STEP+1 WHERE REF=1 AND RE_STEP>0; -- 원글과 ref가 같고, 원글의 RE_STEP보다 큰 것의 +1 올려라
--- 답변 글 저장
-INSERT INTO BOARD (NUM, WRITER, SUBJECT, CONTENT, EMAIL, PW, REF, RE_STEP, RE_LEVEL, IP) 
-    VALUES ((SELECT NVL(MAX(NUM),0)+1 FROM BOARD), '박소영', '답변 제목', '답변 내용', 'DD@DD.DD', '111',
-        1, 0+1, 0+1, '192.168.20.41');
--- 답변 글 출력        
-SELECT * FROM BOARD ORDER BY REF DESC, RE_STEP; 
-
-COMMIT;
-
-DELETE FROM BOARD;
