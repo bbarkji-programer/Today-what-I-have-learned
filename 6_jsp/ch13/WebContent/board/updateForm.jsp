@@ -12,9 +12,8 @@
 <body>
 <% 	
 	String pageNum = request.getParameter("pageNum");
-	String num = request.getParameter("num");
+	int num = Integer.parseInt(request.getParameter("num"));
 	BoardDao bDao = BoardDao.getInstance(); // dao 메소드 쓰겠음
-	bDao.hitUp(num); // 조회수도 하나 올림
 	BoardDto dto = bDao.getBoardOneLine(num); // num 기준으로 글 가져옴
 %>
 <form action="updatePro.jsp" method="post">
