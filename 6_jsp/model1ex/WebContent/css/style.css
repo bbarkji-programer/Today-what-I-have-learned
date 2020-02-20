@@ -2,46 +2,72 @@
 
 
 body{background-color: lightyellow;}
-#mainForm_wrap{
-	width:1000px; height:500px; margin: 10px auto; border: 1px solid #003300; padding:20px; text-align:center; line-height:500px; font-size:3.0em; font-weight:bold;
-}
-header{width:1000px; margin: 0 auto;}
-header #nav ul {overflow: hidden;}
-header #nav ul li{list-style: none; float: right; padding:10px 30px;}
-header #nav ul li a {text-decoration: none; color:#003300;
-	font-weight: bold; font-size: 1.5em;
-}	
 
-footer {overflow:hidden;width: 1000px;margin: 0 auto;}
-footer div { float:left; height: 90px;}
-footer div.office_logo {width: 300px;text-align: center;}
-footer div.office_logo img {
-	margin-left:100px;
-	width:150px;
-	height: 60px;
-	padding:20px;
+*{padding:0; margin: 0;}
+header { 
+	background-color: #ffffaa; font-size: 9pt;
 }
-footer div.office_address{ width:700px;}
-footer div.office_address ul{ margin: 15px 20px 20px 20px;}
-footer div.office_address ul li{
-	padding:2px;
-	color:gray;
-	font-size: 0.8em;
-	list-style: none;
-}
-footer div.copyright{
-	clear: both;
-	border: 0;
-	width: 1000px;
-	height: 25px;
+header a {text-decoration: none; font-weight: bold;}
+header li { list-style: none;}
+header .gnb{width: 100%;	background-color: #003300;}
+header .gnb ul {
+	overflow: hidden;
+	width:700px;
+	height: 30px;
+	line-height: 30px;
 	margin: 0 auto;
-	background-color: #003300;
-	color: white;
-	text-align: center;
-	line-height: 25px;
-	font-size: 0.9em;
 }
-#joinForm_wrap {width:430px; margin: 10px auto; border: 1px solid #003300; padding:20px;}
+header .gnb ul li {	float: right;	margin-right: 30px;}
+header .gnb a { 
+	color : #FFF0B5;
+	font-size: 0.9em;
+	display: block;
+	padding-left:15px;
+	padding-right:15px;
+}
+header .logo{
+	width:120px; text-align:center;
+	margin: 20px auto;
+	cursor: pointer;
+}
+header .lnb {
+  width: 100%;
+  border-top: 1px dashed #003300;
+	border-bottom: 1px dashed #003300;
+}
+header .lnb ul{
+	overflow: hidden;
+	width:300px;
+	margin: 0 auto;
+}
+header .lnb ul li {
+	margin: 5px;
+	float:right;
+	padding:5px 40px;
+	line-height: 25px;
+}
+header .lnb a {
+	height:1.1em;
+	color: #003300;
+	font-size:1.1em;
+	margin-bottom: 20px;
+}
+
+
+body{background-color: #ffffaa;}
+footer{height: 50px; background-color: #003300;}
+footer #footer_info{
+	color:white;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+}
+footer #footer_info p{margin: 5px auto;}
+#joinForm_wrap {
+	width:430px; 		
+	height:400px;
+	padding-top:200px; 
+	margin: 10px auto; border: 1px solid #003300; padding:20px;}
 #join_title{
 	width:400px;            	margin:10px auto;
 	padding-bottom:20px;     	border-bottom:1px solid #003300;
@@ -68,6 +94,8 @@ footer div.copyright{
 	margin: 75px auto;
 	border : 1px solid #003300;
 	padding:50px 100px;
+	height:400px;
+	padding-top:200px;
 }
 #login_title{
 	text-align: center;
@@ -114,3 +142,49 @@ footer div.copyright{
 	border-style: none; outline:none;
 	width: 100%; height: 120%; padding:3px;
 }
+body {
+	background-color: #fff0B5;
+	font-size: 12px;
+}
+#content_form table {border: 2px solid pink; width:95%; margin: 10px auto;}
+#content_form table tr { background-color: #FFE271; }
+#content_form table tr:hover { background-color: orange;
+	cursor: pointer;
+}
+#content_form td, #content_form th {text-align: center; padding:5px; }
+#content_form caption {font-size: 25px; padding:10px;}
+#content_form h2, #content_form b{text-align: center; color:red;}
+#content_form a { text-decoration: none; color:black}
+#content_form .left{text-align: left;}
+#content_form .paging {text-align: center;}
+#content_form input:not(.btn), #content_form textarea {
+	width: 90%;
+}
+#content_form{
+	width:1000px;
+	height:700px;
+	padding-top: 20px;
+	margin:0 auto;
+	}
+body {
+	background-color: #fff0B5;
+	font-size: 12px;
+}
+table {border: 2px solid pink; width:50%; margin: 10px auto;}
+table tr { background-color: #FFE271; }
+table td:hover { background-color: orange;
+	cursor: pointer;
+}
+table th:hover { background-color: orange;
+	cursor: pointer;
+}
+td, th {text-align: center; padding:5px; }
+caption {font-size: 25px; padding:10px;}
+h2,b{text-align: center; color:red;}
+a { text-decoration: none; color:black}
+.left{text-align: left;}
+.paging {text-align: center;}
+input:not(.btn), textarea {
+	width: 90%;
+}	
+	

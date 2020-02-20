@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/style.css" rel="stylesheet">
+<link href="../css/customer.css" rel="stylesheet">
 </head>
 <body>
 <%request.setCharacterEncoding("utf-8"); %>

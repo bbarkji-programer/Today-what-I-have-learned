@@ -1,9 +1,13 @@
 package com.tj.model1ex.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -209,6 +213,77 @@ public class CustomerDao {
 			}
 		}		
 		return result;
+	}
+	// 회원 리스트 가져오기
+	public ArrayList<CustomerDto> getCustomerList(int startrow, int endrow) {
+		ArrayList<CustomerDto> dtos = new ArrayList<CustomerDto>();
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql="SELECT * FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM CUSTOMER ORDER BY cID) A) WHERE RN BETWEEN ? AND ?";
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,startrow);
+			pstmt.setInt(2,endrow);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				String cid = rs.getString("cid");
+				String cpw = rs.getString("cpw");
+				String cname = rs.getString("cname");
+				String ctel = rs.getString("ctel");
+				String cemail = rs.getString("cemail");
+				String caddress = rs.getString("caddress");
+				Date   cbirth = rs.getDate("cbirth");
+				String cgender = rs.getString("cgender");
+				Timestamp crdate = rs.getTimestamp("crdate");
+				dtos.add(new CustomerDto(cid, cpw, cname, ctel, cemail, caddress, cbirth, cgender, crdate));		
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			}catch(Exception e) {
+				
+			}
+		}		
+		return dtos;
+	}
+	
+	// 등록된 회원 수 가져오기
+	public int getCusTotCnt() {
+		int totcnt = 0;
+		
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT COUNT(*) TOTCNT FROM CUSTOMER";
+		
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			if(rs.next()) {
+				totcnt = rs.getInt("totcnt");
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(stmt!=null) stmt.close();
+				if(conn!=null) conn.close();			
+			} catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+		} 		
+		return totcnt;
 	}
 }
 

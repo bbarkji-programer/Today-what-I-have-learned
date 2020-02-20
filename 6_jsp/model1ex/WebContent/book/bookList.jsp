@@ -1,5 +1,5 @@
-<%@page import="com.tj.book.BookDto"%>
-<%@page import="com.tj.book.BookDao"%>
+<%@page import="com.tj.model1ex.dto.BookDto"%>
+<%@page import="com.tj.model1ex.dao.BookDao"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -11,6 +11,8 @@
 <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
+<jsp:include page="../main/header.jsp"/>
+<div id="content_form">
 <%
 	// bookListPaging.jsp -> bookListPaging.jsp?pageNum=1 
 	String pageNum = request.getParameter("pageNum");
@@ -29,41 +31,30 @@
 	<table>
 		<caption> 도서 리스트 </caption>
 		<tr>
-			<th>
-				책 ID
-			</th>
-			<th>
-				책 이름
-			</th>
-			<th>
-				표지
-			</th>
-			<th>
-				가격
-			</th>
-			<th>
-				할인율
-			</th>
-		</tr>	
 	<%for(BookDto b : books){%>
-		<tr>
 			<td>
-				<%=b.getBook_id() %>
+				<p>
+					<a href="bookDetail.jsp?book_id=<%=b.getBook_id()%>&pageNum=<%=pageNum%>">
+						<img src="../bookImg/<%=b.getBook_image1() %>">
+					</a>
+				</p>
+				<p>
+					<%=b.getBook_title() %>
+				</p>
+				<p>
+					<del>
+						<%=b.getBook_price() %>원
+					</del>
+				</p>
+				<p>
+					<%=b.getBook_price()*(100-b.getBook_discount())/100 %>원
+					<b>
+						(<%=b.getBook_discount() %>% 할인)
+					</b>
+				</p>
 			</td>
-			<td>
-				<%=b.getBook_title() %>
-			</td>
-			<td>
-				<img src="../bookImg/<%=b.getBook_image1() %>" width="30">
-			</td>
-			<td>
-				<%=b.getBook_price() %>
-			</td>
-			<td>
-				<%=b.getBook_discount() %>
-			</td>
+		<%}%>
 		</tr>		
-	<%}%>
 	</table>
 	<div class="paging">
 		<%
@@ -76,19 +67,21 @@
 			}
 		%>
 		<%if(startPage>BLOCKSIZE){ %>
-			[ <a href="bookList_paging.jsp?pageNum=<%=startPage-1 %>">이전</a>]
+			[ <a href="bookList.jsp?pageNum=<%=startPage-1 %>">이전</a>]
 		<%} %>	
 		<%for(int i=startPage ; i<=endPage ; i++){
 			if(i==currentPage){
 				out.print("[<b>"+i+"</b>]");
 			}else{
-				out.print("[<a href='bookList_paging.jsp?pageNum="+i+"'>"+i+"</a>]");
+				out.print("[<a href='bookList.jsp?pageNum="+i+"'>"+i+"</a>]");
 			}
 		} 
 		if(endPage<pageCnt){%>
-			[<a href="bookList_paging.jsp?pageNum=<%=endPage+1 %>">다음</a>]	
+			[<a href="bookList.jsp?pageNum=<%=endPage+1 %>">다음</a>]	
 		
 		<%}%>
 	</div>
+	</div>
+	<jsp:include page="../main/footer.jsp"/>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/style.css" rel="stylesheet">
+<link href="../css/customer.css" rel="stylesheet">
 </head>
 <script>
 	setTimeout(function(){
@@ -15,7 +15,7 @@
 <body>
 <%
 	session.invalidate();
+	response.sendRedirect("../main/main.jsp");
 %>
-	<h2>로그아웃 완료. 잠시 후 메인 페이지 이동</h2>
 </body>
 </html>
