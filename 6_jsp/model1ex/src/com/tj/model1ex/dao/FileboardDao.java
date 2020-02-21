@@ -47,7 +47,7 @@ public class FileboardDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql="SELECT * FROM (SELECT ROWNUM RN, A.* FROM (SELECT F.*, C.CNAME FROM FILEBOARD F, CUSTOMER C WHERE F.CID=C.CID ORDER BY fREF DESC, fRE_STEP )A) " + 
+		String sql="SELECT * FROM (SELECT ROWNUM RN, A.* FROM (SELECT F.*, CNAME, CEMAIL FROM FILEBOARD F, CUSTOMER C WHERE F.CID=C.CID ORDER BY fREF DESC, fRE_STEP )A) " + 
 				"    WHERE RN BETWEEN ? AND ?";
 		
 		try {
@@ -67,11 +67,11 @@ public class FileboardDao {
 				int fref = rs.getInt("fref");
 				int fre_step = rs.getInt("fre_step");
 				int fre_level = rs.getInt("fre_level");
-				String fid = rs.getString("fid");
+				String fip = rs.getString("fip");
 				Timestamp frdate = rs.getTimestamp("frdate");
 				String cname = rs.getString("cname"); // 글 상세보기 출력에 필요
 				String cemail = rs.getString("cemail"); // 글 상세보기 출력에 필요
-				dtos.add(new FileboardDto(fnum, cId, fsubject, fcontent, ffilename, fpw, fhit, fref, fre_step, fre_level, fid, frdate, cname, cemail));
+				dtos.add(new FileboardDto(fnum, cId, fsubject, fcontent, ffilename, fpw, fhit, fref, fre_step, fre_level, fip, frdate, cname, cemail));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -255,17 +255,17 @@ public class FileboardDao {
 				String cId = rs.getString("cid");
 				String fsubject = rs.getString("fsubject");
 				String fcontent = rs.getString("fcontent");
-				String ffilename = rs.getString("ffilename");
+				String ffilename = rs.getString("ffilename");				
 				String fpw = rs.getString("fpw");
 				int fhit = rs.getInt("fhit");
 				int fref = rs.getInt("fref");
 				int fre_step = rs.getInt("fre_step");
 				int fre_level = rs.getInt("fre_level");
-				String fid = rs.getString("fid");
+				String fip = rs.getString("fip");
 				Timestamp frdate = rs.getTimestamp("frdate");
 				String cname = rs.getString("cname"); // 글 상세보기 출력에 필요
 				String cemail = rs.getString("cemail"); // 글 상세보기 출력에 필요
-				detail = new FileboardDto(fnum, cId, fsubject, fcontent, ffilename, fpw, fhit, fref, fre_step, fre_level, fid, frdate, cname, cemail);	
+				detail = new FileboardDto(fnum, cId, fsubject, fcontent, ffilename, fpw, fhit, fref, fre_step, fre_level, fip, frdate, cname, cemail);	
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());

@@ -125,7 +125,7 @@ public class FileboardDto {
 		return fip;
 	}
 
-	public void setFid(String fip) {
+	public void setFip(String fip) {
 		this.fip = fip;
 	}
 
@@ -157,7 +157,7 @@ public class FileboardDto {
 	public String toString() {
 		return "FileboardDto [fnum=" + fnum + ", cId=" + cId + ", fsubject=" + fsubject + ", fcontent=" + fcontent
 				+ ", ffilename=" + ffilename + ", fpw=" + fpw + ", fhit=" + fhit + ", fref=" + fref + ", fre_step="
-				+ fre_step + ", fre_level=" + fre_level + ", fid=" + fip + ", frdate=" + frdate + ", cname=" + cname
+				+ fre_step + ", fre_level=" + fre_level + ", fip=" + fip + ", frdate=" + frdate + ", cname=" + cname
 				+ ", cemail=" + cemail + "]";
 	}
 	
