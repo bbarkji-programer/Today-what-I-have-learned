@@ -1,0 +1,400 @@
+@charset "UTF-8";
+/* default  */
+*{
+	margin:0 auto;
+	padding:0;
+	box-sizing:border-box;
+	font-family:Futura LT W01 Light,Noto Sans KR,arial,돋움,dotum,AppleGothic,sans-serif;
+	letter-spacing:-0.5px;
+}
+a{
+	text-decoration:none;
+	color:black;
+	letter-spacing:-0.5px;
+}
+ul, li{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+input[type=button]{
+	border:0;
+	outline:0;
+	background-color:white;
+	letter-spacing:-0.3px;
+}
+input[type=button]:hover{
+	cursor:pointer;
+}
+input[type=submit]{
+	border:0;
+	outline:0;
+	background-color:white;
+	letter-spacing:-0.3px;
+}
+input[type=submit]:hover{
+	cursor:pointer;
+}
+#all{
+	width:100%;
+	position:relative;
+}
+/* header  */
+#header_wrap{
+	width:100%;
+	height:150px;		
+}
+#header_wrap .header_logo{
+	display:block;
+	height:40px;
+	line-height:40px;
+	width:200px;
+	position:absolute;
+	top:30%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	text-align:center;
+	font-size:1.5em;
+	font-weight:bold;
+	background-color:black;
+	color:white;
+}
+#header_wrap .header_right{
+	position:absolute;
+	top:10px;
+	right:10px;
+	font-size:0.8em;
+}
+#header_wrap .header_right input[type=button]{
+	border:0;
+	outline:0;
+	background-color:white;
+	letter-spacing:-0.3px;
+	
+}
+#header_wrap .header_right .header_search input[type=text]{
+	font-size:0.7em;
+	padding-left:5px;
+	border:none;
+	outline:none;
+	margin:0;
+}
+#header_wrap .header_right .header_search .line{
+	border-bottom:1px solid black;	
+	padding-bottom:5px;
+}
+#header_wrap .header_right ul{
+	overflow:hidden;
+}
+#header_wrap .header_right ul li{
+	float:left;
+	padding-right:20px;
+}
+#header_wrap .header_right ul li:nth-child(2){
+	padding-right:1px;
+}
+#header_wrap .header_right ul li:nth-child(3){
+	padding-right:1px;
+}
+#header_wrap .gnb{
+	position:absolute;
+	top:100%;
+	left:50%;
+	transform:translate(-50%, -100%);
+	width:999px;
+	height:40px;
+	padding:0;
+	margin:0;
+}
+#header_wrap .gnb ul{
+	overflow:hidden;
+}
+#header_wrap .gnb ul li{
+	float:left;
+	line-height:40px;
+	height:40px;
+	width:199.8px;
+	text-align:center;
+	font-size:1.2em;
+	letter-spacing:-5px;
+}
+
+#header_wrap .gnb ul li a:hover{
+	display:block;
+	height:40px;
+	background-color:black;
+	color:white;
+}
+/* main_body */
+#container{
+	position:absolute;
+	top:200px;
+	left:50%;
+	transform:translateX(-50%);
+	width: 999px;
+	height: 500px;
+	margin:0;
+	padding:20px 0;
+}
+#container ul{
+	overflow:hidden;
+}
+#container ul li{
+	float:left;
+}
+#container ul li a{
+	display:block;
+	line-height:500px;
+	font-size:6.0em;
+	font-weight:bold;
+	color:white;
+	letter-spacing:-10px;
+}
+#container ul li a:hover{
+	width:333px;
+	height:500px;
+	background-color:black;
+}
+#container .sale, .best, .new{
+	width:333px;
+	height:500px;
+	margin:0;
+	padding:0;
+	line-height:500px;
+	text-align:center;
+	background-color:#e9e9e9;
+	background-size: 333px 500px;
+	background-repeat: no-repeat;
+	
+}
+
+#container .sale{
+	background-image:url('https://image.thehyundai.com/static/image/sect/hnm/hnmmain1593652020200205165604.jpg?ver=02121900');
+}
+#container .best{
+	background-image:url('https://image.thehyundai.com/static/6/6/2/03/A1/hnm40A1032668_0778945007_202001_LB_0466_Q8_L_1120x868_srgb_848.jpg');
+}
+#container .new{
+	background-image:url('https://image.thehyundai.com/static/image/sect/hnm/hnmmain1586533020200123112831.jpg?ver=02121930');
+}
+/*register*/
+#register_wrap{
+	position:absolute;
+	top:200px;
+	left:50%;
+	transform:translateX(-50%);
+	width: 999px;
+	height: 500px;
+	margin:0;
+	padding:20px 0;	
+	font-size:0.9em;
+}
+#register_wrap .title{
+	width:999px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	position:absolute;
+	top:0px;
+	left:50%;
+	transform:translateX(-50%);
+	margin:0;
+	padding:0;
+	font-size:1.2em;
+	letter-spacint:-5px;
+}
+#register_wrap .register_left{
+	width:499px;
+	height:400px;
+	position:absolute;
+	top:50px;
+	left:50%;
+	transform:translateX(-100%);
+	padding:0;
+	margin-top:10px;
+}
+#register_wrap .register_right{
+	width:499px;
+	height:400px;
+	position:absolute;
+	top:50px;
+	left:50%;
+	transform:translateX(0%);
+	padding:0;
+	margin-top:20px;
+}
+#register_wrap .register_left .title{
+	width:499px;
+	height:50px;
+	line-height:50px;
+	text-align:left;
+	position:absolute;
+	top:0px;
+	left:50%;
+	transform:translateX(-50%);
+	margin:0;
+	padding:0;
+	font-size:0.9em;
+	letter-spacint:-1px;
+}
+#register_wrap .register_left .terms{
+	width:499px;
+	height:300px;
+	position:absolute;
+	top:50px;
+	margin:0;
+	padding:0;	
+}
+#register_wrap .register_left .terms textarea{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:10px;
+	color:#888;
+	border:1px solid #888;	
+	font-size:0.9em;
+}
+#register_wrap .register_left .agree{
+	width:499px;
+	height:50px;
+	line-height:50px;
+	text-align:left;
+	position:absolute;
+	top:350px;
+	left:50%;
+	transform:translateX(-50%);
+	margin:0;
+	padding:0;
+}
+#register_wrap .register_left .agree span{
+	font-size:0.9em;
+	letter-spacint:-2px;
+	padding-right:10px;
+}
+#register_wrap .register_right table{
+	padding: 5px 0 0 20px;
+	font-size:0.9em;
+	letter-spacint:-1px;
+}
+#register_wrap .register_right table tr{
+	height:40px;
+}
+#register_wrap .register_right table td:nth-child(odd){
+	width:200px;
+}
+#register_wrap .register_right table input, select{
+	height:30px;
+	width:348px;
+	padding:3px;
+}
+#register_wrap .register_right table .mobile{
+	width:109px;
+}
+#register_wrap .create{
+	width:999px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	position:absolute;
+	top:450px;
+	left:50%;
+	transform:translateX(-50%);
+	margin:0;
+	padding:0;
+}
+#register_wrap .create input[type=submit]{
+	font-size:0.9em;
+	letter-spacint:-1px;
+}
+#signin_wrap{
+	position:absolute;
+	top:200px;
+	left:50%;
+	transform:translateX(-50%);
+	width: 999px;
+	height: 500px;
+	margin:0;
+	padding:20px 0;	
+	font-size:0.9em;
+	border:1px solid black;
+}
+#signin_wrap .title{
+	width:999px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	position:absolute;
+	top:0px;
+	left:50%;
+	transform:translateX(-50%);
+	margin:0;
+	padding:0;
+	font-size:1.2em;
+	letter-spacint:-5px;
+	border:1px solid black;
+}
+#signin_wrap .signin{
+	width:999px;
+	height:450px;
+	position:absolute;
+	top:50px;
+	margin:0;
+	padding:0;
+	left:50%;
+	transform:translateX(-50%);
+	border:1px solid black;
+}
+#signin_wrap .signin table{
+	font-size:0.9em;
+	letter-spacint:-1px;
+	text-align:center;
+	margin:0 auto;
+	position:absolute;
+	top:50px;
+	left:50%;
+	transform:translateX(-50%);
+	border:1px solid black;
+}
+#signin_wrap .signin table tr{
+	height:40px;
+}
+#signin_wrap .signin table td{
+	width:300px;
+	border:1px solid black;
+	word-spacing: 10px;
+}
+#cid, #cpw{
+	border: 1px solid #003300; 
+	width: 95%; 
+	padding: 8px;
+	font-size:0.9em;
+}
+.signinBtn{
+	width: 95%;
+	padding: 8px;
+	font-size:0.9em;
+	background-color:black;
+	color:white;
+}
+
+/*footer*/
+footer{
+	position:absolute;
+	top:780px;
+	left:50%;
+	transform:translateX(-50%);
+	width: 1000px;
+}
+footer #office_info{
+	padding: 20px 0;
+	text-align:center;
+	font-size:0.7em;
+}
+
+
+
+
+	
+	
+	
+	
