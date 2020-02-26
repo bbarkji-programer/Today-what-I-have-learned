@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: lightgrey;
+	font-size: 12px;
+
+}
+table {border: 2px solid black; width:50%; margin: 10px auto;}
+table th { background-color: black; color:white; }
+table tr { background-color: white; }
+table td:hover { background-color: black;
+	cursor: pointer;
+	color:white;
+}
+table th:hover { background-color: black;
+	color:white;
+	cursor: pointer;
+	
+}
+th, td {text-align: center; padding:5px; }
+caption {font-size: 25px; padding:10px; font-weight:bold;}
+h2,b{text-align: center; color:red;}
+a { text-decoration: none; color:black}
+.left{text-align: left;}
+.paging {text-align: center;}
