@@ -23,12 +23,12 @@
 		alert('글 쓰기 실패');
 	</script>
 </c:if>
-<c:if test="${updateResult eq SUCCESS }">
+<c:if test="${modify_result eq SUCCESS }">
 	<script>
 		alert('글 수정 성공')
 	</script>
 </c:if>
-<c:if test="${updateResult eq FAIL }">
+<c:if test="${modify_result eq FAIL }">
 	<script>
 		alert('글 수정 실패')
 	</script>
@@ -41,6 +41,16 @@
 <c:if test="${replyResult eq FAIL }">
 	<script>
 		alert('답변 글 쓰기 실패')
+	</script>
+</c:if>
+<c:if test="${deleteResult eq SUCCESS }">
+	<script>
+		alert('글 삭제 성공')
+	</script>
+</c:if>
+<c:if test="${deleteResult eq FAIL }">
+	<script>
+		alert('글 삭제 실패')
 	</script>
 </c:if>
 <table>

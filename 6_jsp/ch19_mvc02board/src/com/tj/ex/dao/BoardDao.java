@@ -135,6 +135,7 @@ public class BoardDao {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bid);
+			pstmt.executeUpdate();
 		}catch(Exception e) {
 			System.out.print(e.getMessage());
 		}finally {
