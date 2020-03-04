@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	tr:hover{background-color:orange;}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('tr').click(function(){
+		var bId = $(this).children(0).eq(0).text();
+		location.href="ex05_selector.html?bId="+bId+"&pageNum=10";
+	});
+});
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>
+				글번호
+			</th>
+			<th>
+				제목
+			</th>
+			<th>
+				글쓴이
+			</th>
+			<th>
+				조회수
+			</th>
+		</tr>
+		<tr>
+			<td>
+				5
+			</td>
+			<td>
+				제목5
+			</td>
+			<td>
+				글쓴이5
+			</td>
+			<td>
+				조회수5
+			</td>
+		</tr>
+		<tr>
+			<td>
+				4
+			</td>
+			<td>
+				제목4
+			</td>
+			<td>
+				글쓴이4
+			</td>
+			<td>
+				조회수4
+			</td>
+		</tr>
+		<tr>
+			<td>
+				3
+			</td>
+			<td>
+				제목3
+			</td>
+			<td>
+				글쓴이3
+			</td>
+			<td>
+				조회수3
+			</td>
+		</tr>
+		<tr>
+			<td>
+				2
+			</td>
+			<td>
+				제목2
+			</td>
+			<td>
+				글쓴이2
+			</td>
+			<td>
+				조회수2
+			</td>
+		</tr>
+		<tr>
+			<td>
+				1
+			</td>
+			<td>
+				제목1
+			</td>
+			<td>
+				글쓴이1
+			</td>
+			<td>
+				조회수1
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

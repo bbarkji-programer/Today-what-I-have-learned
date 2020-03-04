@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.tj.ex.service.JoinService;
 import com.tj.ex.service.LoginService;
 import com.tj.ex.service.LogoutService;
+import com.tj.ex.service.ModifyService;
 import com.tj.ex.service.Service;
 
 @WebServlet("*.do")
@@ -53,6 +54,8 @@ public class MemberController extends HttpServlet {
 			viewPage = "member/modify.jsp";
 		}else if(command.equals("/modify.do")) {
 			// service.execute(request, response) - ModifyService.java - db에 수정, 세션도 수정
+			service = new ModifyService();
+			service.execute(request, response);
 			viewPage = "member/main.jsp";
 		}else if(command.equals("/list.do")) {
 			// service.execute(request, response) - ListService.java - startRow, endRow 목록 가져오기

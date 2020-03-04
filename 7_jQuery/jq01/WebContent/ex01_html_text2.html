@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>b{color:red;}
+</style>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+	//jQuery 가능
+	$(document).ready(function(){
+		$('#p1').click(function(){
+			// id가 p1인 것을 click 할 때 할 일
+			$('#p1').html('<b>태그 내용 바뀜</b>'); // 태그까지 바꾸고 싶으면 .html 써야함.
+			//$(this).text('태그 내용 바뀜'); // 텍스트만 바꾸고 싶은 경우.
+		});		
+	});	
+</script>
+</head>
+<body>
+	<p id="p1">p태그 하나</p>
+</body>
+</html>

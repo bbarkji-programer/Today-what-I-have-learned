@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h1, td, div{text-align:center;}
+table{margin:0 auto;}
+td{background-color:grey; width:100px; height:100px; }
+.tdClick{background-color:red;}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+		var ddukIdx = parseInt(Math.random()*9);
+	$('td').click(function(){
+		$('td').removeClass('tdClick');
+		var idx = Number($(this).text().trim()); // 클릭한 곳의 위치
+		if(idx == ddukIdx){
+			$('input[name="msg"]').val('추카추카');
+			$(this).css('background-image','url("dduk.jpg")').css('background-size','100%');
+			$('td').off();
+		}else{
+			$('input[name="msg"]').val('틀렸어요. 정답은 :'+ddukIdx);
+			$(this).addClass('tdClick');
+		}		
+	});	
+});
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				1
+			</td>
+			<td>
+				2
+			</td>
+			<td>
+				3
+			</td>
+		</tr>
+		<tr>
+			<td>
+				4
+			</td>
+			<td>
+				5
+			</td>
+			<td>
+				6
+			</td>
+		</tr>
+		<tr>
+			<td>
+				7
+			</td>
+			<td>
+				8
+			</td>
+			<td>
+				9
+			</td>
+		</tr>
+	</table>
+	<div id="msg">
+		<input type="text" name="msg">
+	</div>
+</body>
+</html>
